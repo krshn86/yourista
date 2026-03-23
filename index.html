@@ -1,253 +1,850 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
 <meta charset="UTF-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src https://formspree.io; img-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action https://formspree.io;"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="X-Frame-Options" content="DENY"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Yourista - AI Legal Intelligence</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
+<title>Yourista — AI Legal Intelligence</title>
+<meta name="description" content="Yourista gives law firms a 24/7 AI client assistant that guides, qualifies and routes clients to the right lawyer."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--navy:#03080f;--indigo:#4338ca;--indigo2:#6366f1;--indigo3:#818cf8;--teal:#0891b2;--teal2:#22d3ee;--gold2:#e8c46a;--white:#fff;}
+/* ═══════════════════════════════════════════════════════
+   YOURISTA — Premium AI Legal Intelligence Landing Page
+   ═══════════════════════════════════════════════════════ */
+
+/* ── RESET ── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+
+/* ── CSS VARIABLES ── Teal-infused palette ── */
+:root{
+  --bg:#0c1a24;
+  --surface:#122430;
+  --surface2:#18303e;
+  --border:rgba(45,212,191,0.10);
+  --text:#e8f4f1;
+  --text-muted:#8bbcb4;
+  --text-faint:#6b9e96; /* contrast-safe: 4.5:1 on #0c1a24 */
+  --primary:#2DD4BF;
+  --primary-dim:rgba(45,212,191,0.15);
+  --primary-glow:rgba(45,212,191,0.25);
+  --accent:#7B73FF;
+  --accent-dim:rgba(45,212,191,0.12);
+  --secondary:#5EEAD4;
+  --secondary-dim:rgba(94,234,212,0.12);
+  --gold:#F0C674;
+  --success:#34D399;
+  --error:#FB7185;
+  --white:#fff;
+  --radius:16px;
+  --radius-sm:10px;
+  --radius-xs:6px;
+}
+
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;cursor:auto;}
-.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
-.al{position:absolute;border-radius:50%;filter:blur(100px);animation:am 18s ease-in-out infinite alternate;}
-.al1{width:70vw;height:70vw;background:radial-gradient(circle,rgba(67,56,202,.18),transparent 70%);top:-20%;right:-20%;animation-duration:20s;}
-.al2{width:60vw;height:60vw;background:radial-gradient(circle,rgba(8,145,178,.12),transparent 70%);bottom:-20%;left:-15%;animation-duration:25s;animation-delay:-5s;}
-.al3{width:40vw;height:40vw;background:radial-gradient(circle,rgba(129,140,248,.1),transparent 70%);top:40%;left:30%;animation-duration:15s;animation-delay:-10s;}
-@keyframes am{0%{transform:translate(0,0) scale(1);}50%{transform:translate(5%,3%) scale(1.05);}100%{transform:translate(-3%,-5%) scale(.97);}}
-.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(99,102,241,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%);}
-nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.25rem 5%;display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .4s,border-color .4s,box-shadow .4s;background:rgba(3,8,15,.3);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);box-shadow:0 4px 24px rgba(0,0,0,.12);}
-nav.scrolled{background:rgba(3,8,15,.55);backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);padding:1rem 5%;border-bottom-color:rgba(99,102,241,.18);box-shadow:0 4px 32px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.05);}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--indigo),var(--teal));border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:#fff;flex-shrink:0;}
-.logo-wordmark{font-size:1.15rem;font-weight:800;color:var(--white);letter-spacing:-.5px;}
-.logo-wordmark em{font-style:normal;color:var(--indigo3);}
-.nav-center{display:flex;align-items:center;gap:2rem;}
-.nav-center a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;}
-.nav-center a:hover{color:var(--white);}
-.nav-right{display:flex;align-items:center;gap:.75rem;}
-.nav-pill{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);color:var(--indigo3);font-size:.7rem;font-weight:700;padding:.3rem .75rem;border-radius:100px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
-.lang-switcher{display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:3px;}
-.lang-btn{background:none;border:none;color:rgba(255,255,255,.4);font-size:.72rem;font-weight:700;padding:.3rem .5rem;border-radius:6px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;letter-spacing:.04em;}
-.lang-btn.active{background:rgba(99,102,241,.25);color:var(--indigo3);}
-.lang-btn:hover:not(.active){color:rgba(255,255,255,.7);background:rgba(255,255,255,.05);}
-.nav-btn{background:linear-gradient(135deg,var(--indigo),var(--indigo2));color:#fff;padding:.6rem 1.25rem;border-radius:8px;font-size:.875rem;font-weight:600;text-decoration:none;transition:box-shadow .3s,transform .2s;white-space:nowrap;}
-.nav-btn:hover{box-shadow:0 0 24px rgba(99,102,241,.5);transform:translateY(-1px);}
-.ham-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-.ham-btn span{display:block;width:22px;height:2px;background:rgba(255,255,255,.7);border-radius:2px;}
-.mobile-menu{display:none;position:fixed;inset:0;background:rgba(3,8,15,.97);backdrop-filter:blur(20px);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a,.mobile-menu button{color:var(--white);text-decoration:none;font-size:1.4rem;font-weight:700;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
-.mobile-menu .close-btn{position:absolute;top:1.5rem;right:1.5rem;font-size:1.5rem;color:rgba(255,255,255,.5);}
-.mobile-lang{display:flex;gap:.75rem;margin-top:.5rem;}
-.mobile-lang button{font-size:1rem;padding:.5rem 1rem;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;}
-.mobile-lang button.active{background:rgba(99,102,241,.25);color:var(--indigo3);border-color:rgba(99,102,241,.3);}
-section{position:relative;z-index:1;}
-.wrap{max-width:1200px;margin:0 auto;padding:0 5%;}
-.s-label{font-size:.78rem;font-weight:700;color:var(--indigo3);letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:1.1rem;}
-.s-label::before{content:'';width:20px;height:1px;background:var(--indigo3);}
-.s-h2{font-size:clamp(2.5rem,4.5vw,3.75rem);font-weight:900;letter-spacing:-2px;line-height:1.1;margin-bottom:1.25rem;}
-.s-h2 em{font-style:italic;font-family:'Playfair Display',serif;background:linear-gradient(135deg,var(--indigo3),var(--teal2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.s-sub{color:rgba(255,255,255,.5);font-size:1.1rem;line-height:1.75;max-width:540px;font-weight:300;}
-#hero{min-height:100vh;display:flex;align-items:center;padding:110px 5% 70px;}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;width:100%;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before{
+  content:'';
+  position:fixed;inset:0;z-index:9999;
+  pointer-events:none;
+  opacity:0.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat:repeat;
+  background-size:256px 256px;
+}
+
+/* ── HEADINGS ── */
+h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk','DM Sans',sans-serif;font-weight:700;line-height:1.15;}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
+
+/* ── ANIMATED MESH GRADIENT HERO BACKGROUND ── */
+.mesh-bg{
+  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+}
+.mesh-blob{
+  position:absolute;border-radius:50%;
+  filter:blur(120px);
+  will-change:transform;
+}
+.mesh-blob-1{
+  width:55vw;height:55vw;
+  background:radial-gradient(circle,rgba(45,212,191,0.14),transparent 70%);
+  top:-15%;right:-10%;
+  animation:meshA 22s ease-in-out infinite alternate;
+}
+.mesh-blob-2{
+  width:50vw;height:50vw;
+  background:radial-gradient(circle,rgba(45,212,191,0.1),transparent 70%);
+  bottom:-20%;left:-10%;
+  animation:meshB 28s ease-in-out infinite alternate;
+}
+.mesh-blob-3{
+  width:35vw;height:35vw;
+  background:radial-gradient(circle,rgba(45,212,191,0.08),transparent 70%);
+  top:50%;left:25%;
+  animation:meshC 18s ease-in-out infinite alternate;
+}
+.mesh-blob-4{
+  width:30vw;height:30vw;
+  background:radial-gradient(circle,rgba(240,198,116,0.06),transparent 70%);
+  top:20%;right:30%;
+  animation:meshD 25s ease-in-out infinite alternate;
+}
+@keyframes meshA{0%{transform:translate(0,0) scale(1) rotate(0deg);}50%{transform:translate(5%,3%) scale(1.08) rotate(3deg);}100%{transform:translate(-3%,-5%) scale(0.95) rotate(-2deg);}}
+@keyframes meshB{0%{transform:translate(0,0) scale(1) rotate(0deg);}50%{transform:translate(-4%,5%) scale(1.05) rotate(-4deg);}100%{transform:translate(6%,-3%) scale(0.92) rotate(3deg);}}
+@keyframes meshC{0%{transform:translate(0,0) scale(1);}50%{transform:translate(8%,-6%) scale(1.12);}100%{transform:translate(-5%,4%) scale(0.88);}}
+@keyframes meshD{0%{transform:translate(0,0) scale(1);}50%{transform:translate(-6%,8%) scale(1.06);}100%{transform:translate(4%,-4%) scale(0.96);}}
+
+/* ── GRID BACKGROUND ── */
+.grid-bg{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(45,212,191,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(45,212,191,0.03) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%);
+}
+
+/* ── FLOATING PARTICLES ── */
+.particles-canvas{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+}
+
+/* ── CURSOR GLOW ── */
+.cursor-glow{
+  position:fixed;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(45,212,191,0.06),transparent 70%);
+  pointer-events:none;
+  z-index:1;
+  transform:translate(-50%,-50%);
+  transition:left 0.3s ease-out,top 0.3s ease-out;
+  display:none;
+}
+
+/* ── SECTION DIVIDERS ── */
+.section-divider{
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--border),rgba(45,212,191,0.12),var(--border),transparent);
+  margin:0 auto;
+  max-width:900px;
+}
+
+/* ══════════════════════════════
+   NAV
+═══════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:1rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+nav.scrolled{
+  background:rgba(15,23,41,0.82);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid var(--border);
+  padding:0.75rem 2.5rem;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);z-index:10;}
+.logo-mark{
+  width:36px;height:36px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.125rem;color:#fff;
+  box-shadow:0 4px 16px rgba(45,212,191,0.25);
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.logo-mark:hover{transform:scale(1.05);box-shadow:0 6px 24px rgba(45,212,191,0.35);}
+.logo-wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-0.5px;}
+.logo-wordmark em{font-style:italic;color:var(--primary);font-weight:700;}
+.nav-center{display:flex;gap:2rem;align-items:center;}
+.nav-center a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;position:relative;}
+.nav-center a:hover{color:var(--text);}
+.nav-center a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--primary);transform:scaleX(0);transition:transform 0.3s;border-radius:1px;}
+.nav-center a:hover::after{transform:scaleX(1);}
+.nav-right{display:flex;align-items:center;gap:1rem;}
+.lang-switcher{display:flex;gap:2px;background:rgba(45,212,191,0.08);border-radius:8px;padding:2px;}
+.lang-btn{
+  background:none;border:none;color:var(--text-faint);
+  font-family:'DM Sans',sans-serif;font-size:0.75rem;font-weight:600;
+  padding:5px 10px;border-radius:6px;cursor:pointer;
+  transition:all 0.2s;letter-spacing:0.02em;
+}
+.lang-btn:hover{color:var(--text-muted);}
+.lang-btn.active{background:var(--primary-dim);color:var(--primary);}
+.nav-pill{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--success);
+  background:rgba(52,211,153,0.1);
+  padding:4px 12px;border-radius:20px;
+  border:1px solid rgba(52,211,153,0.2);
+}
+.nav-btn{
+  background:linear-gradient(135deg,var(--primary),#6058E8);
+  color:#fff;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;
+  padding:0.6rem 1.4rem;border-radius:var(--radius-sm);
+  text-decoration:none;
+  transition:all 0.3s;
+  box-shadow:0 4px 16px rgba(45,212,191,0.2);
+}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(45,212,191,0.35);}
+.ham-btn{
+  display:none;
+  flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:10;
+}
+.ham-btn span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s;}
+
+/* ── MOBILE MENU ── */
+.mobile-menu{
+  position:fixed;inset:0;z-index:999;
+  background:rgba(15,23,41,0.97);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.4s;
+}
+.mobile-menu.open{opacity:1;pointer-events:auto;}
+.mobile-menu .close-btn{
+  position:absolute;top:1.25rem;right:1.5rem;
+  background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;
+}
+.mobile-menu a{color:var(--text);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:600;transition:color 0.2s;}
+.mobile-menu a:hover{color:var(--primary);}
+.mobile-lang{display:flex;gap:8px;margin-top:1rem;}
+.mobile-lang button{
+  background:rgba(45,212,191,0.08);border:1px solid var(--border);color:var(--text-muted);
+  font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;
+  padding:8px 18px;border-radius:8px;cursor:pointer;transition:all 0.2s;
+}
+.mobile-lang button.active{background:var(--primary-dim);color:var(--primary);border-color:rgba(45,212,191,0.3);}
+
+/* ══════════════════════════════
+   CTA BUTTONS (shared)
+═══════════════════════════════ */
+.cta-main{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--primary),#6058E8);
+  color:#fff;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;
+  padding:0.875rem 1.75rem;border-radius:var(--radius-sm);
+  text-decoration:none;border:none;cursor:pointer;
+  transition:all 0.3s;
+  box-shadow:0 4px 20px rgba(45,212,191,0.25);
+}
+.cta-main:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 32px rgba(45,212,191,0.4);}
+.cta-main:active{transform:translateY(0) scale(0.98);}
+.cta-ghost{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--text-muted);font-size:0.9rem;font-weight:500;text-decoration:none;
+  transition:all 0.3s;
+}
+.cta-ghost:hover{color:var(--text);}
+.cta-ghost .arrow-icon{display:inline-flex;transition:transform 0.3s;}
+.cta-ghost:hover .arrow-icon{transform:translateX(4px);}
+
+/* ══════════════════════════════
+   SECTION TYPOGRAPHY
+═══════════════════════════════ */
+.s-label{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--primary);margin-bottom:1.25rem;
+}
+.s-label::before{content:'';display:block;width:24px;height:2px;background:var(--primary);border-radius:1px;}
+.s-h2{font-size:clamp(2rem,4.5vw,3.25rem);letter-spacing:-1.5px;margin-bottom:1.25rem;line-height:1.1;}
+.s-h2 em{
+  font-style:italic;
+  background:linear-gradient(135deg,#14B8A6,#5EEAD4,var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.s-sub{font-size:1.05rem;color:var(--text-muted);max-width:520px;line-height:1.65;font-weight:400;}
+
+/* ══════════════════════════════
+   GLASSMORPHISM CARD
+═══════════════════════════════ */
+.glass{
+  background:rgba(22,32,54,0.6);
+  backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  position:relative;
+  overflow:hidden;
+}
+.glass::before{
+  content:'';position:absolute;inset:0;
+  opacity:0.015;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:128px 128px;
+}
+
+/* ══════════════════════════════
+   HERO SECTION
+═══════════════════════════════ */
+#hero{
+  position:relative;z-index:2;
+  padding:clamp(120px,16vh,160px) 0 clamp(60px,8vh,100px);
+  min-height:100vh;
+  display:flex;align-items:center;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);
+  align-items:center;
+  max-width:1200px;margin:0 auto;
+  padding:0 clamp(1.25rem,4vw,2.5rem);
+}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:1.5rem;}
-.eyebrow-line{width:20px;height:1px;background:var(--indigo3);}
-.eyebrow-text{font-size:.75rem;font-weight:700;color:var(--indigo3);letter-spacing:.15em;text-transform:uppercase;}
-.hero-h1{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:1;letter-spacing:-2.5px;margin-bottom:1.5rem;}
-.hero-h1 .line2{display:block;font-family:'Playfair Display',serif;font-style:italic;background:linear-gradient(135deg,var(--indigo3),var(--teal2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding-bottom:.15em;overflow:visible;}
-.hero-body{font-size:1.1rem;color:rgba(255,255,255,.55);line-height:1.75;max-width:480px;margin-bottom:2.25rem;font-weight:300;}
-.hero-body strong{color:rgba(255,255,255,.9);font-weight:600;}
-.hero-ctas{display:flex;align-items:center;gap:1rem;margin-bottom:3rem;flex-wrap:wrap;}
-.cta-main{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--indigo),var(--indigo2));color:#fff;padding:.9rem 1.75rem;border-radius:10px;font-size:1rem;font-weight:600;text-decoration:none;transition:box-shadow .3s,transform .2s;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
-.cta-main:hover{box-shadow:0 8px 32px rgba(99,102,241,.5);transform:translateY(-2px);}
-.cta-ghost{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.6);font-size:.95rem;font-weight:500;text-decoration:none;transition:color .2s;}
-.cta-ghost:hover{color:var(--white);}
-.arrow-icon{width:32px;height:32px;border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;}
-.hero-metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.07);}
-.metric{padding:1.25rem 0;border-right:1px solid rgba(255,255,255,.07);}
-.metric:last-child{border-right:none;}
-.metric-num{font-size:2rem;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#fff,var(--indigo3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.metric-label{font-size:.8rem;color:rgba(255,255,255,.35);margin-top:4px;}
-.hero-right{position:relative;perspective:1200px;}
-.browser-wrap{transform:rotateY(-8deg) rotateX(4deg);transform-style:preserve-3d;transition:transform .6s ease;position:relative;}
-.browser-wrap:hover{transform:rotateY(-2deg) rotateX(1deg);}
-.browser{background:rgba(10,18,32,.95);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;box-shadow:0 50px 100px rgba(0,0,0,.6),40px 40px 70px rgba(67,56,202,.15);}
-.browser-bar{background:rgba(255,255,255,.04);padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid rgba(255,255,255,.06);}
+.eyebrow-line{width:30px;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));border-radius:1px;}
+.eyebrow-text{font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary);}
+.hero-h1{
+  font-size:clamp(2.5rem,5.5vw,4.25rem);
+  letter-spacing:-2px;
+  margin-bottom:1.5rem;
+  line-height:1.05;
+}
+.hero-h1 .line1{display:block;}
+.hero-h1 .line2{
+  display:block;
+  font-style:italic;
+  background:linear-gradient(135deg,#14B8A6,#5EEAD4,var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-body{
+  font-size:1.05rem;color:var(--text-muted);line-height:1.7;
+  margin-bottom:2rem;max-width:480px;
+}
+.hero-body strong{color:var(--text);font-weight:600;}
+.hero-ctas{display:flex;align-items:center;gap:1.5rem;margin-bottom:3rem;flex-wrap:wrap;}
+.hero-metrics{display:flex;gap:2.5rem;flex-wrap:wrap;}
+.metric{text-align:left;}
+.metric-num{
+  font-family:'Space Grotesk',sans-serif;font-size:1.75rem;font-weight:700;
+  background:linear-gradient(135deg,var(--text),var(--primary));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-variant-numeric:tabular-nums;
+}
+.metric-label{font-size:0.8rem;color:var(--text-faint);font-weight:500;margin-top:2px;}
+
+/* ── HERO CHAT MOCKUP ── */
+.hero-right{perspective:1200px;}
+.browser-wrap{
+  position:relative;
+  transform:rotateY(-4deg) rotateX(2deg);
+  transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  transform-style:preserve-3d;
+}
+.browser{
+  border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--border);
+  background:var(--surface);
+  box-shadow:0 24px 80px rgba(0,0,0,0.4),0 0 60px rgba(45,212,191,0.06);
+}
+.browser-bar{
+  background:rgba(15,23,41,0.8);padding:12px 16px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;
+}
 .dots{display:flex;gap:6px;}
 .dot{width:10px;height:10px;border-radius:50%;}
-.dot-r{background:#ff5f57;}.dot-y{background:#febc2e;}.dot-g{background:#28c840;}
-.browser-content{padding:1.25rem;}
-.ui-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+.dot-r{background:#FB7185;}
+.dot-y{background:#F0C674;}
+.dot-g{background:#34D399;}
+.browser-content{padding:1.5rem;}
+.ui-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
 .ui-logo{display:flex;align-items:center;gap:8px;}
-.ui-logo-mark{width:26px;height:26px;background:linear-gradient(135deg,var(--indigo),var(--teal));border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;}
-.ui-logo-text{font-size:.85rem;font-weight:800;}
-.ui-status{display:flex;align-items:center;gap:5px;font-size:.65rem;color:rgba(255,255,255,.4);}
-.status-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:sp 2s ease-in-out infinite;}
-@keyframes sp{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.4);}50%{box-shadow:0 0 0 4px rgba(34,197,94,0);}}
-.chat-area{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:.875rem;margin-bottom:.875rem;min-height:170px;}
-.msg{display:flex;gap:8px;margin-bottom:.75rem;}
-.msg:last-child{margin-bottom:0;}
-.msg-avatar{width:24px;height:24px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;margin-top:2px;}
-.av-user{background:rgba(99,102,241,.3);color:var(--indigo3);}
-.av-ai{background:linear-gradient(135deg,var(--indigo),var(--teal));color:#fff;}
-.msg-bubble{padding:.55rem .8rem;border-radius:10px;font-size:.75rem;line-height:1.5;max-width:88%;}
-.bubble-user{background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.2);color:rgba(255,255,255,.85);border-top-left-radius:3px;}
-.bubble-ai{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.7);border-top-left-radius:3px;}
+.ui-logo-mark{
+  width:26px;height:26px;border-radius:7px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.75rem;color:#fff;
+}
+.ui-logo-text{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.85rem;color:var(--text);}
+.ui-status{display:flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--success);font-weight:500;}
+.status-dot{width:6px;height:6px;border-radius:50%;background:var(--success);animation:pulse-dot 2s infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.chat-area{display:flex;flex-direction:column;gap:1rem;margin-bottom:1.25rem;max-height:240px;overflow:hidden;}
+.msg{display:flex;gap:10px;align-items:flex-start;}
 .msg-right{flex-direction:row-reverse;}
-.msg-right .bubble-user{border-radius:10px;border-top-right-radius:3px;}
-.typing-indicator{display:flex;align-items:center;gap:4px;padding:.45rem .8rem;background:rgba(255,255,255,.04);border-radius:10px;width:fit-content;border:1px solid rgba(255,255,255,.06);}
-.td{width:5px;height:5px;background:var(--indigo3);border-radius:50%;animation:tda 1.2s ease-in-out infinite;}
-.td:nth-child(2){animation-delay:.2s;}.td:nth-child(3){animation-delay:.4s;}
-@keyframes tda{0%,80%,100%{transform:scale(.5);opacity:.3;}40%{transform:scale(1);opacity:1;}}
-.ui-input-row{display:flex;gap:8px;align-items:center;}
-.ui-input{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.6rem .875rem;font-size:.75rem;color:rgba(255,255,255,.3);font-family:'Inter',sans-serif;}
-.ui-send{width:32px;height:32px;background:linear-gradient(135deg,var(--indigo),var(--indigo2));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.float-panel{position:absolute;background:rgba(6,13,26,.92);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:.75rem 1rem;box-shadow:0 16px 50px rgba(0,0,0,.4);z-index:2;}
-.fp1{top:-24px;right:-18px;min-width:170px;animation:fpa 5s ease-in-out infinite;}
-.fp2{bottom:-16px;left:-20px;min-width:155px;animation:fpb 6s ease-in-out infinite 1s;}
-@keyframes fpa{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-@keyframes fpb{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
-.fp-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:6px;font-size:14px;}
-.fi-2{background:rgba(6,182,212,.1);}.fi-5{background:rgba(34,197,94,.1);}
-.fp-title{font-size:.75rem;font-weight:700;color:var(--white);margin-bottom:2px;}
-.fp-sub{font-size:.65rem;color:rgba(255,255,255,.4);}
-.fp-bar{height:3px;border-radius:2px;margin-top:8px;overflow:hidden;background:rgba(255,255,255,.08);}
-.fp-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--indigo),var(--teal2));animation:fg 3s ease-in-out infinite alternate;}
-@keyframes fg{0%{width:60%;}100%{width:92%;}}
-#logos{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);}
-.logos-label{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.5rem;text-align:center;}
-.logos-track{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;}
-.logo-item{font-size:.875rem;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:.04em;transition:color .3s;text-decoration:none;display:flex;align-items:center;gap:7px;}
-.logo-item:hover{color:rgba(255,255,255,.55);}
-.logo-item.featured{color:var(--gold2);border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.06);padding:.45rem 1rem;border-radius:8px;}
-.logo-item.featured:hover{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.35);}
-.logo-sep{width:1px;height:18px;background:rgba(255,255,255,.07);}
-#how{padding:6rem 0;}
-.how-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center;}
-.how-steps{margin-top:2.5rem;}
-.step{display:flex;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,.05);position:relative;cursor:default;}
+.msg-avatar{
+  width:28px;height:28px;border-radius:8px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.65rem;font-weight:700;
+}
+.av-user{background:rgba(45,212,191,0.15);color:var(--text-muted);}
+.av-ai{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;}
+.msg-bubble{
+  padding:0.75rem 1rem;border-radius:12px;
+  font-size:0.8rem;line-height:1.55;max-width:85%;
+}
+.bubble-user{background:var(--primary-dim);color:var(--text);border-bottom-right-radius:4px;}
+.bubble-ai{background:rgba(45,212,191,0.08);color:var(--text-muted);border-bottom-left-radius:4px;}
+.typing-indicator{display:flex;gap:4px;padding:8px 14px;}
+.td{width:6px;height:6px;border-radius:50%;background:var(--text-faint);animation:bounce-td 1.4s infinite;}
+.td:nth-child(2){animation-delay:0.2s;}
+.td:nth-child(3){animation-delay:0.4s;}
+@keyframes bounce-td{0%,80%,100%{transform:translateY(0);}40%{transform:translateY(-6px);}}
+.ui-input-row{
+  display:flex;gap:8px;padding:10px 14px;
+  background:rgba(45,212,191,0.05);border-radius:var(--radius-sm);border:1px solid var(--border);
+}
+.ui-input{flex:1;font-size:0.8rem;color:var(--text-faint);}
+.ui-send{
+  width:30px;height:30px;border-radius:8px;
+  background:linear-gradient(135deg,var(--primary),#6058E8);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+
+/* ── FLOAT PANELS ── */
+.float-panel{
+  position:absolute;z-index:5;
+  background:rgba(22,32,54,0.85);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--border);
+  border-radius:12px;padding:14px 18px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.25);
+  transition:transform 0.3s ease;
+}
+.fp1{top:4%;left:-18%;animation:floatY 6s ease-in-out infinite;}
+.fp2{bottom:8%;right:-14%;animation:floatY 7s ease-in-out infinite reverse;}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.fp-icon{font-size:1.25rem;margin-bottom:6px;}
+.fp-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.82rem;color:var(--text);margin-bottom:2px;}
+.fp-sub{font-size:0.72rem;color:var(--text-faint);}
+.fp-bar{height:3px;background:rgba(45,212,191,0.1);border-radius:2px;margin-top:8px;overflow:hidden;width:100px;}
+.fp-fill{height:100%;width:65%;background:linear-gradient(90deg,var(--primary),var(--secondary));border-radius:2px;}
+
+/* ══════════════════════════════
+   LOGOS / PARTNERS
+═══════════════════════════════ */
+#logos{
+  position:relative;z-index:2;
+  padding:2.5rem 0 3.5rem;
+}
+.logos-label{
+  text-align:center;font-size:0.78rem;color:var(--text-faint);
+  letter-spacing:0.08em;text-transform:uppercase;font-weight:500;
+  margin-bottom:1.5rem;
+}
+.logos-track{
+  display:flex;align-items:center;justify-content:center;
+  gap:2rem;flex-wrap:wrap;
+}
+.logo-item{
+  font-family:'Space Grotesk',sans-serif;font-size:0.95rem;font-weight:600;
+  color:var(--text-faint);letter-spacing:-0.2px;
+  transition:color 0.2s;white-space:nowrap;
+  text-decoration:none;
+}
+.logo-item:hover{color:var(--text-muted);}
+.logo-item.featured{
+  color:var(--text-muted);
+  text-decoration:none;
+}
+.logo-item.featured:hover{color:var(--primary);}
+.logo-sep{width:1px;height:18px;background:var(--border);}
+
+/* ══════════════════════════════
+   HOW IT WORKS
+═══════════════════════════════ */
+#how{position:relative;z-index:2;padding:6rem 0;}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start;}
+.how-steps{display:flex;flex-direction:column;gap:0;margin-top:2.5rem;}
+.step{
+  display:flex;gap:1.25rem;align-items:flex-start;
+  padding:1.5rem 0;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
 .step:last-child{border-bottom:none;}
-.step-num{font-size:.65rem;font-weight:800;color:rgba(99,102,241,.4);letter-spacing:.1em;padding-top:3px;min-width:22px;}
-.step-content h3{font-size:1.1rem;font-weight:700;margin-bottom:.35rem;color:rgba(255,255,255,.85);transition:color .3s;}
-.step-content p{font-size:.95rem;color:rgba(255,255,255,.4);line-height:1.6;font-weight:300;}
-.step:hover .step-content h3{color:var(--white);}
-.step-indicator{position:absolute;left:-1px;top:0;bottom:0;width:2px;background:transparent;transition:background .3s;}
-.step:hover .step-indicator{background:linear-gradient(180deg,transparent,var(--indigo2),transparent);}
-.dashboard-mock{background:rgba(8,14,26,.95);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:1.5rem;box-shadow:0 30px 80px rgba(0,0,0,.5);}
-.dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;}
-.dash-title{font-size:.9rem;font-weight:700;color:rgba(255,255,255,.7);}
-.dash-badge{font-size:.65rem;background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2);padding:.2rem .6rem;border-radius:20px;}
-.dash-cards{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:1rem;}
-.dash-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.875rem;}
-.dc-label{font-size:.75rem;color:rgba(255,255,255,.35);margin-bottom:5px;font-weight:500;}
-.dc-val{font-size:1.6rem;font-weight:800;letter-spacing:-1px;}
-.dc-sub{font-size:.72rem;color:rgba(255,255,255,.25);margin-top:2px;}
-.val-indigo{color:var(--indigo3);}.val-teal{color:var(--teal2);}.val-green{color:#4ade80;}.val-gold{color:var(--gold2);}
-.dash-list{display:flex;flex-direction:column;gap:.45rem;}
-.dash-row{display:flex;align-items:center;gap:9px;padding:.55rem .7rem;background:rgba(255,255,255,.02);border-radius:8px;border:1px solid rgba(255,255,255,.04);}
+.step-num{
+  font-family:'Space Grotesk',sans-serif;font-size:0.75rem;font-weight:700;
+  color:var(--primary);
+  background:var(--primary-dim);
+  width:36px;height:36px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:all 0.3s;
+}
+.step:hover .step-num{background:var(--primary);color:#fff;}
+.step-indicator{display:none;}
+.step-content h3{font-size:1rem;font-weight:600;margin-bottom:0.4rem;color:var(--text);}
+.step-content p{font-size:0.9rem;color:var(--text-muted);line-height:1.6;}
+
+/* ── DASHBOARD MOCKUP ── */
+.how-visual{position:sticky;top:120px;}
+.dashboard-mock{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,0,0,0.3);
+}
+.dash-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.25rem;
+  border-bottom:1px solid var(--border);
+  background:rgba(15,23,41,0.5);
+}
+.dash-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.9rem;}
+.dash-badge{
+  font-size:0.65rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--success);background:rgba(52,211,153,0.1);
+  padding:3px 10px;border-radius:12px;
+}
+.dash-cards{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--border);
+  margin:0;
+}
+.dash-card{background:var(--surface);padding:1rem 1.25rem;}
+.dc-label{font-size:0.72rem;color:var(--text-faint);font-weight:500;margin-bottom:4px;}
+.dc-val{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums;}
+.val-indigo{color:var(--primary);}
+.val-teal{color:var(--secondary);}
+.val-green{color:var(--success);}
+.val-gold{color:var(--gold);}
+.dc-sub{font-size:0.7rem;color:var(--text-faint);margin-top:2px;}
+.dash-list{padding:0.75rem 1.25rem;}
+.dash-row{
+  display:flex;align-items:center;gap:10px;
+  padding:0.6rem 0;
+  border-bottom:1px solid var(--border);
+}
+.dash-row:last-child{border-bottom:none;}
 .dash-row-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
-.dash-row-text{font-size:.8rem;color:rgba(255,255,255,.5);flex:1;}
-.dash-row-tag{font-size:.62rem;padding:.15rem .5rem;border-radius:4px;font-weight:600;}
-.tag-new{background:rgba(99,102,241,.15);color:var(--indigo3);}
-.tag-progress{background:rgba(234,179,8,.1);color:#fbbf24;}
-.tag-done{background:rgba(34,197,94,.1);color:#4ade80;}
-#features{padding:6rem 0;}
-.features-header{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3.5rem;}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05);border-radius:18px;overflow:hidden;}
-.feat{background:var(--navy);padding:2rem;transition:background .4s;cursor:default;position:relative;overflow:hidden;}
-.feat::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(99,102,241,.05),transparent);opacity:0;transition:opacity .4s;}
-.feat:hover::before{opacity:1;}
-.feat:hover{background:rgba(10,16,30,.95);}
-.feat-num{font-size:.65rem;font-weight:800;color:rgba(99,102,241,.25);letter-spacing:.1em;margin-bottom:1.25rem;}
-.feat-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:19px;}
-.fi-1{background:rgba(99,102,241,.1);}.fi-2b{background:rgba(6,182,212,.1);}.fi-3{background:rgba(139,92,246,.1);}.fi-4{background:rgba(201,168,76,.1);}.fi-5b{background:rgba(34,197,94,.1);}.fi-6{background:rgba(99,102,241,.08);}
-.feat h3{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;color:rgba(255,255,255,.88);}
-.feat p{font-size:.925rem;color:rgba(255,255,255,.35);line-height:1.65;font-weight:300;}
-.feat-tag{display:inline-flex;align-items:center;gap:5px;margin-top:1rem;font-size:.65rem;font-weight:700;padding:.25rem .6rem;border-radius:20px;letter-spacing:.04em;}
-.t-live{background:rgba(34,197,94,.08);color:#4ade80;border:1px solid rgba(34,197,94,.15);}
-.t-soon{background:rgba(99,102,241,.08);color:var(--indigo3);border:1px solid rgba(99,102,241,.15);}
-#phases{padding:6rem 0;}
-.phases-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.05);border-radius:22px;overflow:hidden;}
-.phase{padding:3rem;position:relative;overflow:hidden;background:var(--navy);}
-.phase-active{background:rgba(6,10,20,.95);}
-.phase-inactive{background:rgba(3,7,14,.7);opacity:.75;}
-.phase-label{margin-bottom:1.75rem;}
-.pl-badge{padding:.25rem .75rem;border-radius:20px;font-size:.65rem;display:inline-block;font-weight:700;}
-.plb-active{background:rgba(99,102,241,.15);color:var(--indigo3);border:1px solid rgba(99,102,241,.25);}
-.plb-soon{background:rgba(6,182,212,.08);color:var(--teal2);border:1px solid rgba(6,182,212,.15);}
-.phase h3{font-size:1.6rem;font-weight:900;letter-spacing:-.75px;margin-bottom:.65rem;line-height:1.15;}
-.phase-desc{font-size:.975rem;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:1.75rem;font-weight:300;}
-.phase-list{list-style:none;display:flex;flex-direction:column;gap:.65rem;}
-.phase-list li{font-size:.95rem;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:10px;}
-.pl-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;}
-.pld-indigo{background:var(--indigo3);}.pld-teal{background:var(--teal2);}
-.phase-glow-abs{position:absolute;width:250px;height:250px;border-radius:50%;filter:blur(90px);pointer-events:none;bottom:-80px;right:-60px;opacity:.14;}
-.pg-indigo{background:var(--indigo);}.pg-teal{background:var(--teal);}
-#testimonials{padding:6rem 0;}
+.dash-row-text{flex:1;font-size:0.8rem;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.dash-row-tag{
+  font-size:0.65rem;font-weight:600;padding:3px 10px;border-radius:12px;
+  letter-spacing:0.02em;white-space:nowrap;flex-shrink:0;
+}
+.tag-new{background:var(--primary-dim);color:var(--primary);}
+.tag-progress{background:rgba(240,198,116,0.12);color:var(--gold);}
+.tag-done{background:rgba(52,211,153,0.12);color:var(--success);}
+
+/* ══════════════════════════════
+   FEATURES
+═══════════════════════════════ */
+#features{position:relative;z-index:2;padding:6rem 0;}
+.features-header{
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;
+  align-items:end;margin-bottom:3.5rem;
+}
+.features-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--border);
+  border-radius:var(--radius);overflow:hidden;
+}
+.feat{
+  background:var(--surface);
+  padding:2rem;
+  transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+  position:relative;
+  overflow:hidden;
+}
+.feat::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(45,212,191,0.04),transparent);
+  opacity:0;transition:opacity 0.4s;pointer-events:none;
+}
+.feat:hover{background:var(--surface2);}
+.feat:hover::after{opacity:1;}
+.feat-num{
+  font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;
+  color:var(--text-faint);margin-bottom:1rem;
+}
+.feat-icon{font-size:1.5rem;margin-bottom:1rem;display:block;}
+.feat h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem;color:var(--text);}
+.feat p{font-size:0.88rem;color:var(--text-muted);line-height:1.6;margin-bottom:1rem;}
+.feat-tag{
+  font-size:0.7rem;font-weight:600;
+  padding:4px 10px;border-radius:12px;
+}
+.t-live{color:var(--primary);background:var(--primary-dim);}
+.t-soon{color:var(--secondary);background:var(--secondary-dim);}
+
+/* ══════════════════════════════
+   PHASES / ROADMAP
+═══════════════════════════════ */
+#phases{position:relative;z-index:2;padding:6rem 0;}
+.phases-wrap{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+}
+.phase{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:2.5rem;
+  position:relative;overflow:hidden;
+  transition:all 0.4s;
+}
+.phase:hover{border-color:rgba(45,212,191,0.2);}
+.phase-glow-abs{
+  position:absolute;top:-40%;right:-30%;width:60%;height:60%;
+  border-radius:50%;filter:blur(80px);pointer-events:none;opacity:0.15;
+}
+.pg-indigo{background:var(--primary);}
+.pg-teal{background:var(--secondary);}
+.phase-label{margin-bottom:1.5rem;}
+.pl-badge{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  padding:5px 14px;border-radius:20px;
+}
+.plb-active{color:var(--primary);background:var(--primary-dim);border:1px solid rgba(45,212,191,0.2);}
+.plb-soon{color:var(--secondary);background:var(--secondary-dim);border:1px solid rgba(45,212,191,0.2);}
+.phase h3{font-size:1.75rem;letter-spacing:-0.5px;margin-bottom:1rem;}
+.phase-desc{font-size:0.92rem;color:var(--text-muted);line-height:1.65;margin-bottom:1.75rem;}
+.phase-list{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
+.phase-list li{display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--text-muted);}
+.pl-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.pld-indigo{background:var(--primary);}
+.pld-teal{background:var(--secondary);}
+
+/* ══════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════ */
+#testimonials{position:relative;z-index:2;padding:6rem 0;}
 .testi-header{text-align:center;margin-bottom:3.5rem;}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05);border-radius:18px;overflow:hidden;}
-.tcard{background:var(--navy);padding:2rem;transition:background .3s;}
-.tcard:hover{background:rgba(8,14,26,.98);}
-.tcard-text{font-size:.975rem;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:1.5rem;font-weight:300;font-style:italic;}
-.tcard-author{display:flex;align-items:center;gap:11px;border-top:1px solid rgba(255,255,255,.05);padding-top:1.1rem;}
-.tcard-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;}
-.tav1{background:linear-gradient(135deg,#6366f1,#8b5cf6);}.tav2{background:linear-gradient(135deg,#0891b2,#06b6d4);}.tav3{background:linear-gradient(135deg,#7c3aed,#a855f7);}
-.tcard-name{font-size:.925rem;font-weight:700;color:rgba(255,255,255,.85);}
-.tcard-role{font-size:.8rem;color:rgba(255,255,255,.35);margin-top:1px;}
+
+/* Carousel shared */
+.carousel-wrap{position:relative;overflow:hidden;}
+.carousel-track{
+  display:flex;gap:1px;
+  transition:transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);
+  will-change:transform;cursor:grab;
+}
+.carousel-track.grabbing{cursor:grabbing;}
+.carousel-track .tcard,.carousel-track .pcard{flex-shrink:0;}
+.carousel-dots{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:2rem;}
+.carousel-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(45,212,191,0.18);border:none;padding:0;cursor:pointer;
+  transition:all 0.3s;
+}
+.carousel-dot.active{background:var(--primary);width:22px;border-radius:4px;}
+.carousel-arrows{display:flex;justify-content:center;gap:12px;margin-top:1.25rem;}
+.carousel-arrow{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--primary-dim);border:1px solid rgba(45,212,191,0.2);
+  color:var(--text-muted);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;font-size:0.9rem;font-family:inherit;
+}
+.carousel-arrow:hover{background:rgba(45,212,191,0.25);color:#fff;border-color:rgba(45,212,191,0.4);}
+.carousel-arrow:disabled{opacity:0.25;cursor:default;pointer-events:none;}
+
+/* TCARD */
+.tcard{
+  background:var(--surface);padding:2rem;
+  position:relative;
+}
 .stars-row{display:flex;gap:3px;margin-bottom:1rem;}
-.star-g{width:13px;height:13px;background:#f59e0b;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
-#pricing{padding:6rem 0;}
+.star-g{
+  width:14px;height:14px;
+  background:var(--gold);
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+.tcard-text{font-size:0.92rem;color:var(--text-muted);line-height:1.65;margin-bottom:1.5rem;font-style:italic;}
+.tcard-author{display:flex;align-items:center;gap:12px;}
+.tcard-av{
+  width:40px;height:40px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.75rem;font-weight:700;flex-shrink:0;
+}
+.tav1{background:var(--primary-dim);color:var(--primary);}
+.tav2{background:var(--secondary-dim);color:var(--secondary);}
+.tav3{background:rgba(240,198,116,0.12);color:var(--gold);}
+.tcard-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.88rem;color:var(--text);}
+.tcard-role{font-size:0.78rem;color:var(--text-faint);}
+
+/* ══════════════════════════════
+   PRICING
+═══════════════════════════════ */
+#pricing{position:relative;z-index:2;padding:6rem 0;}
 .pricing-header{text-align:center;margin-bottom:3.5rem;}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05);border-radius:22px;overflow:hidden;max-width:960px;margin:0 auto;}
-.pcard{background:var(--navy);padding:2.5rem;transition:background .3s;position:relative;}
-.pcard:hover{background:rgba(8,14,26,.98);}
-.pcard.pcard-hero{background:rgba(7,11,22,.98);}
-.pcard-eyebrow{font-size:.7rem;font-weight:800;color:rgba(255,255,255,.3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.875rem;}
-.pcard-price{display:flex;align-items:baseline;gap:4px;margin-bottom:.4rem;}
-.pcard-amount{font-size:3rem;font-weight:900;letter-spacing:-2.5px;}
-.pcard-period{font-size:.875rem;color:rgba(255,255,255,.35);}
-.pcard-desc{font-size:.925rem;color:rgba(255,255,255,.4);line-height:1.55;margin-bottom:1.75rem;font-weight:300;}
-.pcard-divider{height:1px;background:rgba(255,255,255,.06);margin-bottom:1.25rem;}
-.pcard-features{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.75rem;}
-.pcard-features li{font-size:.925rem;color:rgba(255,255,255,.55);display:flex;align-items:flex-start;gap:9px;}
-.pf-check{width:14px;height:14px;flex-shrink:0;margin-top:2px;}
-.pcard-btn{display:block;text-align:center;padding:.8rem;border-radius:10px;font-size:.9rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:all .3s;}
-.pb-outline{background:transparent;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);}
-.pb-outline:hover{border-color:rgba(255,255,255,.3);color:var(--white);}
-.pb-filled{background:linear-gradient(135deg,var(--indigo),var(--indigo2));color:#fff;box-shadow:0 4px 18px rgba(99,102,241,.3);}
-.pb-filled:hover{box-shadow:0 8px 36px rgba(99,102,241,.5);transform:translateY(-1px);}
-.popular-tag{position:absolute;top:1.25rem;right:1.25rem;font-size:.65rem;font-weight:800;background:linear-gradient(135deg,var(--indigo),var(--indigo2));color:#fff;padding:.25rem .65rem;border-radius:20px;letter-spacing:.05em;text-transform:uppercase;}
-#cta{padding:6rem 0;}
-.cta-inner{position:relative;border-radius:24px;overflow:hidden;padding:5rem;text-align:center;background:rgba(6,10,20,.95);border:1px solid rgba(99,102,241,.12);}
-.cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(67,56,202,.15),transparent 70%);pointer-events:none;}
-.cta-top-line{position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(99,102,241,.4),transparent);}
-.email-row{display:flex;gap:.75rem;max-width:440px;margin:0 auto 1.25rem;}
-.email-in{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:.875rem 1.25rem;color:var(--white);font-size:.95rem;font-family:'Inter',sans-serif;outline:none;transition:border-color .3s;}
-.email-in::placeholder{color:rgba(255,255,255,.22);}
-.email-in:focus{border-color:rgba(99,102,241,.45);}
-.trust-strip{display:flex;align-items:center;justify-content:center;gap:1.75rem;font-size:.8rem;color:rgba(255,255,255,.28);flex-wrap:wrap;}
+.pcard{
+  background:var(--surface);padding:2.5rem;
+  transition:all 0.4s;position:relative;
+}
+.pcard:hover{background:var(--surface2);}
+.pcard.pcard-hero{background:rgba(22,32,54,0.9);}
+.pcard-eyebrow{
+  font-size:0.7rem;font-weight:800;color:var(--text-faint);
+  letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.875rem;
+}
+.pcard-price{display:flex;align-items:baseline;gap:4px;margin-bottom:0.5rem;}
+.pcard-amount{
+  font-family:'Space Grotesk',sans-serif;font-size:3rem;font-weight:700;
+  letter-spacing:-2.5px;
+}
+.pcard-period{font-size:0.875rem;color:var(--text-faint);}
+.pcard-desc{font-size:0.9rem;color:var(--text-muted);line-height:1.55;margin-bottom:1.75rem;font-weight:400;}
+.pcard-divider{height:1px;background:var(--border);margin-bottom:1.25rem;}
+.pcard-features{list-style:none;display:flex;flex-direction:column;gap:0.65rem;margin-bottom:1.75rem;}
+.pcard-features li{font-size:0.88rem;color:var(--text-muted);display:flex;align-items:flex-start;gap:9px;}
+.pf-check{width:14px;height:14px;flex-shrink:0;margin-top:3px;}
+.pcard-btn{
+  display:block;text-align:center;padding:0.8rem;border-radius:var(--radius-sm);
+  font-size:0.9rem;font-weight:600;text-decoration:none;cursor:pointer;
+  border:none;font-family:'DM Sans',sans-serif;transition:all 0.3s;width:100%;
+}
+.pb-outline{
+  background:transparent;border:1px solid var(--border);
+  color:var(--text-muted);
+}
+.pb-outline:hover{border-color:rgba(45,212,191,0.3);color:var(--text);}
+.pb-filled{
+  background:linear-gradient(135deg,var(--primary),#6058E8);
+  color:#fff;
+  box-shadow:0 4px 18px rgba(45,212,191,0.25);
+}
+.pb-filled:hover{box-shadow:0 8px 36px rgba(45,212,191,0.4);transform:translateY(-1px);}
+.popular-tag{
+  position:absolute;top:1.25rem;right:1.25rem;
+  font-size:0.65rem;font-weight:800;
+  background:linear-gradient(135deg,var(--primary),#6058E8);
+  color:#fff;padding:0.25rem 0.65rem;border-radius:20px;
+  letter-spacing:0.05em;text-transform:uppercase;
+}
+
+/* ══════════════════════════════
+   CTA SECTION
+═══════════════════════════════ */
+#cta{position:relative;z-index:2;padding:6rem 0;}
+.cta-inner{
+  position:relative;border-radius:20px;overflow:hidden;
+  padding:5rem;text-align:center;
+  background:var(--surface);
+  border:1px solid var(--border);
+}
+.cta-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(45,212,191,0.12),transparent 70%);
+  pointer-events:none;
+}
+.cta-top-line{
+  position:absolute;top:0;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(45,212,191,0.35),transparent);
+}
+.email-row{display:flex;gap:0.75rem;max-width:440px;margin:0 auto 1.25rem;}
+.email-in{
+  flex:1;background:rgba(45,212,191,0.06);
+  border:1px solid var(--border);border-radius:var(--radius-sm);
+  padding:0.875rem 1.25rem;color:var(--text);font-size:0.95rem;
+  font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.3s;
+}
+.email-in::placeholder{color:var(--text-faint);}
+.email-in:focus{border-color:rgba(45,212,191,0.4);}
+.trust-strip{display:flex;align-items:center;justify-content:center;gap:1.75rem;font-size:0.8rem;color:var(--text-faint);flex-wrap:wrap;}
 .trust-item{display:flex;align-items:center;gap:6px;}
-footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
+
+/* ══════════════════════════════
+   FOOTER
+═══════════════════════════════ */
+footer{
+  position:relative;z-index:2;
+  padding:2.5rem 0;
+  border-top:1px solid var(--border);
+}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem;}
 .footer-links{display:flex;gap:1.75rem;flex-wrap:wrap;}
-.footer-links a{color:rgba(255,255,255,.22);text-decoration:none;font-size:.875rem;transition:color .2s;}
-.footer-links a:hover{color:rgba(255,255,255,.55);}
-.footer-copy{font-size:.825rem;color:rgba(255,255,255,.16);}
-.js-ready .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
-.js-ready .reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-delay-1{transition-delay:.1s;}
-.reveal-delay-2{transition-delay:.2s;}
-.reveal-delay-3{transition-delay:.3s;}
+.footer-links a{color:var(--text-faint);text-decoration:none;font-size:0.875rem;transition:color 0.2s;}
+.footer-links a:hover{color:var(--text-muted);}
+.footer-copy{font-size:0.8rem;color:var(--text-faint);}
+.footer-attrib{font-size:0.8rem;color:var(--text-faint);text-decoration:none;transition:color 0.2s;display:block;margin-top:0.25rem;}
+.footer-attrib:hover{color:var(--text-muted);}
 
-/* ── MOBILE ── */
+/* ══════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════ */
+.js-ready .reveal{
+  opacity:0;transform:translateY(28px);
+  transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:0.1s !important;}
+.reveal-delay-2{transition-delay:0.2s !important;}
+.reveal-delay-3{transition-delay:0.3s !important;}
+
+/* ══════════════════════════════
+   3D CARD TILT
+═══════════════════════════════ */
+.tilt-card{transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);}
+
+/* ══════════════════════════════
+   REDUCED MOTION
+═══════════════════════════════ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms !important;transition-duration:0.01ms !important;}
+  .mesh-blob{animation:none !important;}
+  .float-panel{animation:none !important;}
+  .js-ready .reveal{opacity:1;transform:none;}
+}
+
+/* ══════════════════════════════
+   FOCUS STATES
+═══════════════════════════════ */
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px;}
+button:focus-visible,a:focus-visible{outline:2px solid var(--primary);outline-offset:2px;}
+
+/* ══════════════════════════════
+   DESKTOP OVERRIDES (Carousel)
+═══════════════════════════════ */
+@media(min-width:769px){
+  .carousel-wrap{overflow:visible;}
+  .carousel-track{flex-wrap:nowrap;transform:none !important;cursor:default;}
+  .carousel-track .tcard,.carousel-track .pcard{flex:1;}
+  .carousel-dots,.carousel-arrows{display:none;}
+  #testimonials .carousel-track{
+    background:var(--border);border-radius:var(--radius);overflow:hidden;gap:1px;
+  }
+  #pricing .carousel-track{
+    background:var(--border);border-radius:var(--radius);overflow:hidden;gap:1px;
+    max-width:960px;margin:0 auto;
+  }
+}
+
+/* ══════════════════════════════
+   MOBILE RESPONSIVE
+═══════════════════════════════ */
 @media(max-width:768px){
   body{cursor:auto;}
-    nav{padding:1rem 5%;}
+  .cursor-glow{display:none !important;}
+  nav{padding:1rem 5%;}
+  nav.scrolled{padding:0.75rem 5%;}
   .nav-center,.nav-pill,.lang-switcher,.nav-btn{display:none;}
   .ham-btn{display:flex;}
-  #hero{padding:100px 5% 60px;min-height:auto;}
+  #hero{padding:100px 0 60px;min-height:auto;}
   .hero-grid{grid-template-columns:1fr;gap:2.5rem;}
   .hero-h1{font-size:clamp(2.25rem,10vw,3.5rem);}
   .hero-right{perspective:none;order:-1;}
@@ -258,6 +855,7 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
   .logo-sep{display:none;}
   #how{padding:4rem 0;}
   .how-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .how-visual{position:static;}
   #features{padding:4rem 0;}
   .features-header{grid-template-columns:1fr;gap:1rem;margin-bottom:2.5rem;}
   .features-grid{grid-template-columns:1fr 1fr;}
@@ -265,82 +863,37 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
   .phases-wrap{grid-template-columns:1fr;}
   .phase{padding:2rem;}
   #testimonials{padding:4rem 0;}
-  .testi-grid{grid-template-columns:1fr;}
   #pricing{padding:4rem 0;}
-  .pricing-grid{grid-template-columns:1fr;}
   #cta{padding:4rem 0;}
   .cta-inner{padding:2.5rem 1.75rem;}
   .email-row{flex-direction:column;}
   .footer-inner{flex-direction:column;gap:1rem;text-align:center;}
   .footer-links{justify-content:center;}
-}
-
-
-
-/* ── CAROUSEL (testimonials + pricing) ── */
-.carousel-wrap{position:relative;overflow:hidden;}
-.carousel-track{
-  display:flex;
-  gap:1px;
-  transition:transform .45s cubic-bezier(.25,.46,.45,.94);
-  will-change:transform;
-  cursor:grab;
-}
-.carousel-track.grabbing{cursor:grabbing;}
-/* each slide keeps its original card styles, just gets flex-shrink:0 */
-.carousel-track .tcard,
-.carousel-track .pcard{flex-shrink:0;}
-/* dots */
-.carousel-dots{
-  display:flex;justify-content:center;align-items:center;gap:8px;
-  margin-top:2rem;
-}
-.carousel-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:rgba(255,255,255,.18);
-  border:none;padding:0;cursor:pointer;
-  transition:background .3s,transform .3s,width .3s;
-}
-.carousel-dot.active{background:var(--indigo3);width:22px;border-radius:4px;}
-/* nav arrows */
-.carousel-arrows{
-  display:flex;justify-content:center;gap:12px;margin-top:1.25rem;
-}
-.carousel-arrow{
-  width:40px;height:40px;border-radius:50%;
-  background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);
-  color:rgba(255,255,255,.6);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .2s;font-size:.9rem;
-}
-.carousel-arrow:hover{background:rgba(99,102,241,.25);color:#fff;border-color:rgba(99,102,241,.4);}
-.carousel-arrow:disabled{opacity:.25;cursor:default;pointer-events:none;}
-/* Desktop: show all as grid (carousel only for mobile) */
-@media(min-width:769px){
-  .carousel-wrap{overflow:visible;}
-  .carousel-track{flex-wrap:nowrap;transform:none !important;cursor:default;}
-  .carousel-track .tcard,
-  .carousel-track .pcard{flex:1;}
-  .carousel-dots,.carousel-arrows{display:none;}
-  /* restore gap-based grid look */
-  #testimonials .carousel-track{background:rgba(255,255,255,.05);border-radius:18px;overflow:hidden;gap:1px;}
-  #pricing     .carousel-track{background:rgba(255,255,255,.05);border-radius:22px;overflow:hidden;gap:1px;max-width:960px;margin:0 auto;}
-}
-@media(max-width:768px){
   .carousel-track .tcard{width:calc(100vw - 5rem);}
   .carousel-track .pcard{width:calc(min(340px, 100vw - 4rem));}
-  /* pricing middle card hero highlight */
-  .carousel-track .pcard.pcard-hero{border:1px solid rgba(99,102,241,.3);}
+  .carousel-track .pcard.pcard-hero{border:1px solid rgba(45,212,191,0.3);}
+}
+@media(max-width:480px){
+  .features-grid{grid-template-columns:1fr;}
+  .hero-metrics{gap:1.5rem;}
 }
 </style>
 </head>
 <body>
-<div class="aurora"><div class="al al1"></div><div class="al al2"></div><div class="al al3"></div></div>
+<!-- Background layers -->
+<div class="mesh-bg">
+  <div class="mesh-blob mesh-blob-1"></div>
+  <div class="mesh-blob mesh-blob-2"></div>
+  <div class="mesh-blob mesh-blob-3"></div>
+  <div class="mesh-blob mesh-blob-4"></div>
+</div>
 <div class="grid-bg"></div>
+<canvas class="particles-canvas" id="particles"></canvas>
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <button class="close-btn" onclick="closeMobileMenu()">✕</button>
+  <button class="close-btn" onclick="closeMobileMenu()" aria-label="Close menu">&#10005;</button>
   <a href="#how" onclick="closeMobileMenu()" data-i18n="nav.how">How it works</a>
   <a href="#features" onclick="closeMobileMenu()" data-i18n="nav.features">Features</a>
   <a href="#phases" onclick="closeMobileMenu()" data-i18n="nav.roadmap">Roadmap</a>
@@ -355,8 +908,8 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
 </div>
 
 <!-- NAV -->
-<nav id="nav">
-  <a href="#" class="nav-logo"><div class="logo-mark">Y</div><span class="logo-wordmark">Your<em>ista</em></span></a>
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#" class="nav-logo" aria-label="Yourista home"><div class="logo-mark">Y</div><span class="logo-wordmark">Your<em>ista</em></span></a>
   <div class="nav-center">
     <a href="#how" data-i18n="nav.how">How it works</a>
     <a href="#features" data-i18n="nav.features">Features</a>
@@ -364,15 +917,15 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
     <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
   </div>
   <div class="nav-right">
-    <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="nl">NL</button>
-      <button class="lang-btn" data-lang="de">DE</button>
-      <button class="lang-btn" data-lang="fr">FR</button>
+    <div class="lang-switcher" role="group" aria-label="Language selector">
+      <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+      <button class="lang-btn" data-lang="nl" aria-label="Nederlands">NL</button>
+      <button class="lang-btn" data-lang="de" aria-label="Deutsch">DE</button>
+      <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
     </div>
     <span class="nav-pill" data-i18n="nav.badge">MVP Live</span>
     <a href="#cta" class="nav-btn" data-i18n="nav.cta">Get Early Access</a>
-    <button class="ham-btn" onclick="openMobileMenu()"><span></span><span></span><span></span></button>
+    <button class="ham-btn" onclick="openMobileMenu()" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -392,18 +945,26 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
         <a href="#how" class="cta-ghost"><span data-i18n="hero.seehow">See how it works</span><span class="arrow-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
       </div>
       <div class="hero-metrics reveal">
-        <div class="metric"><div class="metric-num" data-target="2">0</div><div class="metric-label" data-i18n="hero.metric1">× faster intake</div></div>
+        <div class="metric"><div class="metric-num" data-target="2" data-suffix="×">0</div><div class="metric-label" data-i18n="hero.metric1">faster intake</div></div>
         <div class="metric"><div class="metric-num" data-target="94" data-suffix="%">0%</div><div class="metric-label" data-i18n="hero.metric2">Accuracy rate</div></div>
         <div class="metric"><div class="metric-num">24/7</div><div class="metric-label" data-i18n="hero.metric3">Guidance</div></div>
       </div>
     </div>
     <div class="hero-right reveal reveal-delay-2">
-      <div class="browser-wrap">
-        <div class="float-panel fp1"><div class="fp-icon fi-2">📅</div><div class="fp-title" data-i18n="hero.fp1title">Meeting scheduled</div><div class="fp-sub" data-i18n="hero.fp1sub">Tomorrow, 10:00 AM</div><div class="fp-bar"><div class="fp-fill"></div></div></div>
+      <div class="browser-wrap" id="heroMockup">
+        <div class="float-panel fp1">
+          <div class="fp-icon">&#128197;</div>
+          <div class="fp-title" data-i18n="hero.fp1title">Meeting scheduled</div>
+          <div class="fp-sub" data-i18n="hero.fp1sub">Tomorrow, 10:00 AM</div>
+          <div class="fp-bar"><div class="fp-fill"></div></div>
+        </div>
         <div class="browser">
           <div class="browser-bar"><div class="dots"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div></div>
           <div class="browser-content">
-            <div class="ui-header"><div class="ui-logo"><div class="ui-logo-mark">Y</div><span class="ui-logo-text">Yourista</span></div><div class="ui-status"><div class="status-dot"></div><span data-i18n="hero.aiOnline">AI Online</span></div></div>
+            <div class="ui-header">
+              <div class="ui-logo"><div class="ui-logo-mark">Y</div><span class="ui-logo-text">Yourista</span></div>
+              <div class="ui-status"><div class="status-dot"></div><span data-i18n="hero.aiOnline">AI Online</span></div>
+            </div>
             <div class="chat-area">
               <div class="msg msg-right"><div class="msg-avatar av-user">CL</div><div class="msg-bubble bubble-user" data-i18n="hero.chatUser">I have a business dispute. My partner is breaching our shareholder agreement.</div></div>
               <div class="msg"><div class="msg-avatar av-ai">Y</div><div class="msg-bubble bubble-ai" data-i18n="hero.chatAI">This is a serious matter under Dutch corporate law. I can connect you with a commercial litigation specialist within 24 hours. May I ask a few quick questions first?</div></div>
@@ -412,7 +973,11 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
             <div class="ui-input-row"><div class="ui-input" data-i18n="hero.inputPlaceholder">Describe your situation...</div><div class="ui-send"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div></div>
           </div>
         </div>
-        <div class="float-panel fp2"><div class="fp-icon fi-5">🔒</div><div class="fp-title" data-i18n="hero.fp2title">GDPR Secured</div><div class="fp-sub" data-i18n="hero.fp2sub">End-to-end encrypted</div></div>
+        <div class="float-panel fp2">
+          <div class="fp-icon">&#128274;</div>
+          <div class="fp-title" data-i18n="hero.fp2title">GDPR Secured</div>
+          <div class="fp-sub" data-i18n="hero.fp2sub">End-to-end encrypted</div>
+        </div>
       </div>
     </div>
   </div>
@@ -423,7 +988,7 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
   <div class="wrap">
     <p class="logos-label" data-i18n="logos.label">Trusted partners and early adopters</p>
     <div class="logos-track">
-      <a href="https://www.tsanglawfirm.nl/" target="_blank" rel="noopener" class="logo-item featured">⚖ TSANG Law Firm</a>
+      <a href="https://www.tsanglawfirm.nl/" target="_blank" rel="noopener" class="logo-item featured">&#9878; TSANG Law Firm</a>
       <div class="logo-sep"></div><span class="logo-item">Van der Berg &amp; Co</span>
       <div class="logo-sep"></div><span class="logo-item">Lex Partners</span>
       <div class="logo-sep"></div><span class="logo-item">Juridisch Advies NL</span>
@@ -431,6 +996,8 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
     </div>
   </div>
 </section>
+
+<div class="section-divider"></div>
 
 <!-- HOW IT WORKS -->
 <section id="how">
@@ -441,10 +1008,10 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
         <h2 class="s-h2 reveal"><span data-i18n="how.h2a">From first question</span><br/><span data-i18n="how.h2b">to </span><em data-i18n="how.h2em">right lawyer</em></h2>
         <p class="s-sub reveal" data-i18n="how.sub">Yourista manages the full client journey from the moment someone visits your website to the moment they are in the right hands.</p>
         <div class="how-steps">
-          <div class="step reveal"><div class="step-indicator"></div><div class="step-num">01</div><div class="step-content"><h3 data-i18n="how.s1h">Client asks a question</h3><p data-i18n="how.s1p">The Yourista widget on your website engages visitors instantly, understanding their legal issue in plain language at any time of day.</p></div></div>
-          <div class="step reveal reveal-delay-1"><div class="step-indicator"></div><div class="step-num">02</div><div class="step-content"><h3 data-i18n="how.s2h">AI qualifies and analyses</h3><p data-i18n="how.s2p">Our legal AI gathers the right information through guided conversation and builds a structured case brief automatically.</p></div></div>
-          <div class="step reveal reveal-delay-2"><div class="step-indicator"></div><div class="step-num">03</div><div class="step-content"><h3 data-i18n="how.s3h">Smart match to the right lawyer</h3><p data-i18n="how.s3p">The matching engine pairs the client with the best-suited lawyer based on case type, jurisdiction and availability.</p></div></div>
-          <div class="step reveal reveal-delay-3"><div class="step-indicator"></div><div class="step-num">04</div><div class="step-content"><h3 data-i18n="how.s4h">Lawyer receives a full brief</h3><p data-i18n="how.s4p">Your lawyer receives a complete intake summary before the first consultation, saving time and arriving well prepared.</p></div></div>
+          <div class="step reveal"><div class="step-num">01</div><div class="step-content"><h3 data-i18n="how.s1h">Client asks a question</h3><p data-i18n="how.s1p">The Yourista widget on your website engages visitors instantly, understanding their legal issue in plain language at any time of day.</p></div></div>
+          <div class="step reveal reveal-delay-1"><div class="step-num">02</div><div class="step-content"><h3 data-i18n="how.s2h">AI qualifies and analyses</h3><p data-i18n="how.s2p">Our legal AI gathers the right information through guided conversation and builds a structured case brief automatically.</p></div></div>
+          <div class="step reveal reveal-delay-2"><div class="step-num">03</div><div class="step-content"><h3 data-i18n="how.s3h">Smart match to the right lawyer</h3><p data-i18n="how.s3p">The matching engine pairs the client with the best-suited lawyer based on case type, jurisdiction and availability.</p></div></div>
+          <div class="step reveal reveal-delay-3"><div class="step-num">04</div><div class="step-content"><h3 data-i18n="how.s4h">Lawyer receives a full brief</h3><p data-i18n="how.s4p">Your lawyer receives a complete intake summary before the first consultation, saving time and arriving well prepared.</p></div></div>
         </div>
       </div>
       <div class="how-visual reveal reveal-delay-1">
@@ -457,16 +1024,18 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
             <div class="dash-card"><div class="dc-label" data-i18n="how.dc4">Avg. Response</div><div class="dc-val val-gold">&lt;2m</div><div class="dc-sub" data-i18n="how.dc4sub">vs 4h industry avg</div></div>
           </div>
           <div class="dash-list">
-            <div class="dash-row"><div class="dash-row-dot" style="background:var(--indigo3)"></div><div class="dash-row-text" data-i18n="how.dr1">Business dispute, shareholder breach</div><span class="dash-row-tag tag-new" data-i18n="how.tagNew">New</span></div>
-            <div class="dash-row"><div class="dash-row-dot" style="background:#fbbf24"></div><div class="dash-row-text" data-i18n="how.dr2">Employment contract review</div><span class="dash-row-tag tag-progress" data-i18n="how.tagProg">In progress</span></div>
-            <div class="dash-row"><div class="dash-row-dot" style="background:#4ade80"></div><div class="dash-row-text" data-i18n="how.dr3">IP trademark registration query</div><span class="dash-row-tag tag-done" data-i18n="how.tagDone">Matched</span></div>
-            <div class="dash-row"><div class="dash-row-dot" style="background:var(--teal2)"></div><div class="dash-row-text" data-i18n="how.dr4">Corporate restructuring advice</div><span class="dash-row-tag tag-new" data-i18n="how.tagNew">New</span></div>
+            <div class="dash-row"><div class="dash-row-dot" style="background:var(--primary)"></div><div class="dash-row-text" data-i18n="how.dr1">Business dispute, shareholder breach</div><span class="dash-row-tag tag-new" data-i18n="how.tagNew">New</span></div>
+            <div class="dash-row"><div class="dash-row-dot" style="background:var(--gold)"></div><div class="dash-row-text" data-i18n="how.dr2">Employment contract review</div><span class="dash-row-tag tag-progress" data-i18n="how.tagProg">In progress</span></div>
+            <div class="dash-row"><div class="dash-row-dot" style="background:var(--success)"></div><div class="dash-row-text" data-i18n="how.dr3">IP trademark registration query</div><span class="dash-row-tag tag-done" data-i18n="how.tagDone">Matched</span></div>
+            <div class="dash-row"><div class="dash-row-dot" style="background:var(--secondary)"></div><div class="dash-row-text" data-i18n="how.dr4">Corporate restructuring advice</div><span class="dash-row-tag tag-new" data-i18n="how.tagNew">New</span></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<div class="section-divider"></div>
 
 <!-- FEATURES -->
 <section id="features">
@@ -476,15 +1045,17 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
       <p class="s-sub reveal" data-i18n="feat.sub">Two intelligent tools, one for your clients and one for your team, working in perfect harmony.</p>
     </div>
     <div class="features-grid reveal">
-      <div class="feat"><div class="feat-num">01</div><div class="feat-icon fi-1">💬</div><h3 data-i18n="feat.f1h">Intelligent Client Intake</h3><p data-i18n="feat.f1p">A 24/7 AI that understands problems in plain language and routes clients to exactly the right legal expertise.</p><span class="feat-tag t-live" data-i18n="feat.phase1live">● Phase 1 Live</span></div>
-      <div class="feat"><div class="feat-num">02</div><div class="feat-icon fi-2b">🎯</div><h3 data-i18n="feat.f2h">Smart Case Matching</h3><p data-i18n="feat.f2p">Our proprietary engine pairs each client with the best-suited lawyer based on case type, jurisdiction and availability.</p><span class="feat-tag t-live" data-i18n="feat.phase1live">● Phase 1 Live</span></div>
-      <div class="feat"><div class="feat-num">03</div><div class="feat-icon fi-5b">🔐</div><h3 data-i18n="feat.f3h">GDPR-First Security</h3><p data-i18n="feat.f3p">Built for European legal compliance from day one, with end-to-end encryption, data sovereignty and full audit trails.</p><span class="feat-tag t-live" data-i18n="feat.phase1live">● Phase 1 Live</span></div>
-      <div class="feat"><div class="feat-num">04</div><div class="feat-icon fi-3">🗓️</div><h3 data-i18n="feat.f4h">AI Agenda Management</h3><p data-i18n="feat.f4p">Your intelligent office co-pilot manages schedules, deadlines and priorities automatically so lawyers can focus on what matters.</p><span class="feat-tag t-soon" data-i18n="feat.phase2soon">◌ Phase 2 Soon</span></div>
-      <div class="feat"><div class="feat-num">05</div><div class="feat-icon fi-4">📄</div><h3 data-i18n="feat.f5h">Document Intelligence</h3><p data-i18n="feat.f5p">Review, summarise and flag key clauses in contracts and legal filings using our trained legal AI models.</p><span class="feat-tag t-soon" data-i18n="feat.phase2soon">◌ Phase 2 Soon</span></div>
-      <div class="feat"><div class="feat-num">06</div><div class="feat-icon fi-6">📊</div><h3 data-i18n="feat.f6h">Analytics and Reporting</h3><p data-i18n="feat.f6p">Full visibility into intake performance, conversion rates and client satisfaction, all in one dashboard.</p><span class="feat-tag t-live" data-i18n="feat.phase1live">● Phase 1 Live</span></div>
+      <div class="feat tilt-card"><div class="feat-num">01</div><div class="feat-icon">&#128172;</div><h3 data-i18n="feat.f1h">Intelligent Client Intake</h3><p data-i18n="feat.f1p">A 24/7 AI that understands problems in plain language and routes clients to exactly the right legal expertise.</p><span class="feat-tag t-live" data-i18n="feat.phase1live">&#9679; Phase 1 Live</span></div>
+      <div class="feat tilt-card"><div class="feat-num">02</div><div class="feat-icon">&#127919;</div><h3 data-i18n="feat.f2h">Smart Case Matching</h3><p data-i18n="feat.f2p">Our proprietary engine pairs each client with the best-suited lawyer based on case type, jurisdiction and availability.</p><span class="feat-tag t-live" data-i18n="feat.phase1live">&#9679; Phase 1 Live</span></div>
+      <div class="feat tilt-card"><div class="feat-num">03</div><div class="feat-icon">&#128272;</div><h3 data-i18n="feat.f3h">GDPR-First Security</h3><p data-i18n="feat.f3p">Built for European legal compliance from day one, with end-to-end encryption, data sovereignty and full audit trails.</p><span class="feat-tag t-live" data-i18n="feat.phase1live">&#9679; Phase 1 Live</span></div>
+      <div class="feat tilt-card"><div class="feat-num">04</div><div class="feat-icon">&#128197;</div><h3 data-i18n="feat.f4h">AI Agenda Management</h3><p data-i18n="feat.f4p">Your intelligent office co-pilot manages schedules, deadlines and priorities automatically so lawyers can focus on what matters.</p><span class="feat-tag t-soon" data-i18n="feat.phase2soon">&#9676; Phase 2 Soon</span></div>
+      <div class="feat tilt-card"><div class="feat-num">05</div><div class="feat-icon">&#128196;</div><h3 data-i18n="feat.f5h">Document Intelligence</h3><p data-i18n="feat.f5p">Review, summarise and flag key clauses in contracts and legal filings using our trained legal AI models.</p><span class="feat-tag t-soon" data-i18n="feat.phase2soon">&#9676; Phase 2 Soon</span></div>
+      <div class="feat tilt-card"><div class="feat-num">06</div><div class="feat-icon">&#128202;</div><h3 data-i18n="feat.f6h">Analytics and Reporting</h3><p data-i18n="feat.f6p">Full visibility into intake performance, conversion rates and client satisfaction, all in one dashboard.</p><span class="feat-tag t-live" data-i18n="feat.phase1live">&#9679; Phase 1 Live</span></div>
     </div>
   </div>
 </section>
+
+<div class="section-divider"></div>
 
 <!-- PHASES -->
 <section id="phases">
@@ -494,11 +1065,39 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
       <h2 class="s-h2 reveal" style="text-align:center;"><span data-i18n="phases.h2a">Precision delivery,</span><br/><em data-i18n="phases.h2em">phase by phase</em></h2>
     </div>
     <div class="phases-wrap reveal">
-      <div class="phase phase-active"><div class="phase-glow-abs pg-indigo"></div><div class="phase-label"><span class="pl-badge plb-active" data-i18n="phases.p1badge">Phase 1 · MVP Now</span></div><h3 data-i18n="phases.p1h">Client-Facing<br/>Assistant</h3><p class="phase-desc" data-i18n="phases.p1desc">The intelligent front-end that helps clients find the right legal support, embedded on your firm's website and available 24 hours a day.</p><ul class="phase-list"><li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f1">Conversational legal intake</span></li><li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f2">Lawyer matching engine</span></li><li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f3">Multi-language support (NL/EN/FR/DE)</span></li><li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f4">Website embed widget</span></li><li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f5">Client portal and case tracking</span></li><li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f6">Analytics dashboard</span></li></ul></div>
-      <div class="phase phase-inactive"><div class="phase-glow-abs pg-teal"></div><div class="phase-label"><span class="pl-badge plb-soon" data-i18n="phases.p2badge">Phase 2 · Coming</span></div><h3 data-i18n="phases.p2h">Lawyer Office<br/>Assistant</h3><p class="phase-desc" data-i18n="phases.p2desc">An AI co-pilot that lives inside your practice, managing time, tasks, documents and client communications with remarkable intelligence.</p><ul class="phase-list"><li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f1">AI agenda and calendar management</span></li><li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f2">Deadline and task tracking</span></li><li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f3">Document summarisation</span></li><li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f4">Case timeline builder</span></li><li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f5">Billing and time capture</span></li><li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f6">Internal knowledge base AI</span></li></ul></div>
+      <div class="phase tilt-card">
+        <div class="phase-glow-abs pg-indigo"></div>
+        <div class="phase-label"><span class="pl-badge plb-active" data-i18n="phases.p1badge">Phase 1 &middot; MVP Now</span></div>
+        <h3 data-i18n="phases.p1h">Client-Facing<br/>Assistant</h3>
+        <p class="phase-desc" data-i18n="phases.p1desc">The intelligent front-end that helps clients find the right legal support, embedded on your firm's website and available 24 hours a day.</p>
+        <ul class="phase-list">
+          <li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f1">Conversational legal intake</span></li>
+          <li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f2">Lawyer matching engine</span></li>
+          <li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f3">Multi-language support (NL/EN/FR/DE)</span></li>
+          <li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f4">Website embed widget</span></li>
+          <li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f5">Client portal and case tracking</span></li>
+          <li><div class="pl-dot pld-indigo"></div><span data-i18n="phases.p1f6">Analytics dashboard</span></li>
+        </ul>
+      </div>
+      <div class="phase tilt-card">
+        <div class="phase-glow-abs pg-teal"></div>
+        <div class="phase-label"><span class="pl-badge plb-soon" data-i18n="phases.p2badge">Phase 2 &middot; Coming</span></div>
+        <h3 data-i18n="phases.p2h">Lawyer Office<br/>Assistant</h3>
+        <p class="phase-desc" data-i18n="phases.p2desc">An AI co-pilot that lives inside your practice, managing time, tasks, documents and client communications with remarkable intelligence.</p>
+        <ul class="phase-list">
+          <li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f1">AI agenda and calendar management</span></li>
+          <li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f2">Deadline and task tracking</span></li>
+          <li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f3">Document summarisation</span></li>
+          <li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f4">Case timeline builder</span></li>
+          <li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f5">Billing and time capture</span></li>
+          <li><div class="pl-dot pld-teal"></div><span data-i18n="phases.p2f6">Internal knowledge base AI</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
+
+<div class="section-divider"></div>
 
 <!-- TESTIMONIALS -->
 <section id="testimonials">
@@ -516,12 +1115,14 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
       </div>
       <div class="carousel-dots" id="testi-dots"></div>
       <div class="carousel-arrows">
-        <button class="carousel-arrow" id="testi-prev" aria-label="Previous">&#8592;</button>
-        <button class="carousel-arrow" id="testi-next" aria-label="Next">&#8594;</button>
+        <button class="carousel-arrow" id="testi-prev" aria-label="Previous testimonial">&#8592;</button>
+        <button class="carousel-arrow" id="testi-next" aria-label="Next testimonial">&#8594;</button>
       </div>
     </div>
   </div>
 </section>
+
+<div class="section-divider"></div>
 
 <!-- PRICING -->
 <section id="pricing">
@@ -533,19 +1134,62 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
     </div>
     <div class="carousel-wrap reveal" id="price-carousel">
       <div class="carousel-track" id="price-track">
-      <div class="pcard"><div class="pcard-eyebrow" data-i18n="price.p1name">Website Assistant</div><div class="pcard-price"><span class="pcard-amount" style="color:var(--indigo3)">€300</span><span class="pcard-period" data-i18n="price.permonth">/month</span></div><p class="pcard-desc" data-i18n="price.p1desc">AI-powered client-facing assistant on your firm's website. Phase 1, available now.</p><div class="pcard-divider"></div><ul class="pcard-features"><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo3)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f1">Unlimited client conversations</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo3)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f2">Website embed widget</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo3)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f3">Smart lawyer matching</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo3)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f4">Multi-language (NL/EN/FR/DE)</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo3)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f5">Analytics dashboard</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo3)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f6">GDPR compliant</span></li></ul><button class="pcard-btn pb-outline" data-i18n="price.p1btn">Get Started</button></div>
-      <div class="pcard pcard-hero"><span class="popular-tag" data-i18n="price.fullsuite">Full Suite</span><div class="pcard-eyebrow" data-i18n="price.p2name">Your Office Manager</div><div class="pcard-price"><span class="pcard-amount" style="color:var(--white)">€400</span><span class="pcard-period" data-i18n="price.permonth">/month</span></div><p class="pcard-desc" data-i18n="price.p2desc">Website Assistant plus AI office co-pilot for lawyers. Phases 1 and 2 combined.</p><div class="pcard-divider"></div><ul class="pcard-features"><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo2)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f1">Everything in Website Assistant</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo2)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f2">AI agenda management</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo2)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f3">Deadline and task tracking</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo2)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f4">Document summarisation</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo2)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f5">Priority support</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(99,102,241,.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--indigo2)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f6">Phase 2 early access</span></li></ul><button class="pcard-btn pb-filled" data-i18n="price.p2btn">Start 14-Day Trial</button></div>
-      <div class="pcard"><div class="pcard-eyebrow" data-i18n="price.p3name">Enterprise</div><div class="pcard-price"><span class="pcard-amount" style="color:var(--teal2);font-size:2.25rem;letter-spacing:-1px;" data-i18n="price.custom">Custom</span></div><p class="pcard-desc" data-i18n="price.p3desc">For large firms needing custom integrations, dedicated SLAs and on-premise deployment.</p><div class="pcard-divider"></div><ul class="pcard-features"><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(6,182,212,.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--teal2)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p3f1">Everything in Office Manager</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(6,182,212,.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--teal2)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p3f2">Custom AI model training</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(6,182,212,.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--teal2)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p3f3">Dedicated account manager</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(6,182,212,.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--teal2)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p3f4">On-premise deployment</span></li><li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(6,182,212,.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--teal2)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p3f5">Custom SLA agreement</span></li></ul><button class="pcard-btn pb-outline" data-i18n="price.p3btn">Contact Sales</button></div>
-
+        <div class="pcard">
+          <div class="pcard-eyebrow" data-i18n="price.p1name">Website Assistant</div>
+          <div class="pcard-price"><span class="pcard-amount" style="color:var(--primary)">&euro;300</span><span class="pcard-period" data-i18n="price.permonth">/month</span></div>
+          <p class="pcard-desc" data-i18n="price.p1desc">AI-powered client-facing assistant on your firm's website. Phase 1, available now.</p>
+          <div class="pcard-divider"></div>
+          <ul class="pcard-features">
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f1">Unlimited client conversations</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f2">Website embed widget</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f3">Smart lawyer matching</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f4">Multi-language (NL/EN/FR/DE)</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f5">Analytics dashboard</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p1f6">GDPR compliant</span></li>
+          </ul>
+          <button class="pcard-btn pb-outline" data-i18n="price.p1btn">Get Started</button>
+        </div>
+        <div class="pcard pcard-hero">
+          <span class="popular-tag" data-i18n="price.fullsuite">Full Suite</span>
+          <div class="pcard-eyebrow" data-i18n="price.p2name">Your Office Manager</div>
+          <div class="pcard-price"><span class="pcard-amount" style="color:var(--text)">&euro;400</span><span class="pcard-period" data-i18n="price.permonth">/month</span></div>
+          <p class="pcard-desc" data-i18n="price.p2desc">Website Assistant plus AI office co-pilot for lawyers. Phases 1 and 2 combined.</p>
+          <div class="pcard-divider"></div>
+          <ul class="pcard-features">
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f1">Everything in Website Assistant</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f2">AI agenda management</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f3">Deadline and task tracking</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f4">Document summarisation</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f5">Priority support</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.4)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p2f6">Phase 2 early access</span></li>
+          </ul>
+          <button class="pcard-btn pb-filled" data-i18n="price.p2btn">Start 14-Day Trial</button>
+        </div>
+        <div class="pcard">
+          <div class="pcard-eyebrow" data-i18n="price.p3name">Enterprise</div>
+          <div class="pcard-price"><span class="pcard-amount" style="color:var(--secondary);font-size:2.25rem;letter-spacing:-1px;" data-i18n="price.custom">Custom</span></div>
+          <p class="pcard-desc" data-i18n="price.p3desc">For large firms needing custom integrations, dedicated SLAs and on-premise deployment.</p>
+          <div class="pcard-divider"></div>
+          <ul class="pcard-features">
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--secondary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p3f1">Everything in Office Manager</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--secondary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p3f2">Custom AI model training</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--secondary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p3f3">Dedicated account manager</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--secondary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p3f4">On-premise deployment</span></li>
+            <li><svg class="pf-check" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(45,212,191,0.3)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--secondary)" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="price.p3f5">Custom SLA agreement</span></li>
+          </ul>
+          <button class="pcard-btn pb-outline" data-i18n="price.p3btn">Contact Sales</button>
+        </div>
       </div>
       <div class="carousel-dots" id="price-dots"></div>
       <div class="carousel-arrows">
-        <button class="carousel-arrow" id="price-prev" aria-label="Previous">&#8592;</button>
-        <button class="carousel-arrow" id="price-next" aria-label="Next">&#8594;</button>
+        <button class="carousel-arrow" id="price-prev" aria-label="Previous plan">&#8592;</button>
+        <button class="carousel-arrow" id="price-next" aria-label="Next plan">&#8594;</button>
       </div>
     </div>
   </div>
 </section>
+
+<div class="section-divider"></div>
 
 <!-- CTA -->
 <section id="cta">
@@ -557,12 +1201,14 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
       <p class="s-sub" style="text-align:center;margin:0 auto 2.5rem;" data-i18n="cta.sub">Join early access. Be the first law firm to experience Yourista in action.</p>
       <form id="cta-form" action="https://formspree.io/f/xojkkbbk" method="POST">
         <input type="hidden" name="_replyto" value="hello@yourista.eu"/>
+        <!-- Honeypot field — hidden from real users, bots fill it -->
+        <input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off"/>
         <div class="email-row">
-          <input type="email" name="email" class="email-in" data-i18n-placeholder="cta.placeholder" required/>
-          <button type="submit" class="cta-main" style="white-space:nowrap;padding:.875rem 1.5rem;font-size:.9rem;" data-i18n="cta.btn">Get Access</button>
+          <input type="email" name="email" class="email-in" data-i18n-placeholder="cta.placeholder" placeholder="your@lawfirm.com" required aria-label="Email address" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Enter a valid email address"/>
+          <button type="submit" id="cta-submit" class="cta-main" style="white-space:nowrap;padding:.875rem 1.5rem;font-size:.9rem;" data-i18n="cta.btn">Get Access</button>
         </div>
       </form>
-      <div id="form-success" style="display:none;margin-bottom:1.25rem;font-size:.9rem;color:#4ade80;font-weight:500;">Thanks! We will be in touch at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="660e030a0a09261f0913140f151207480313">[email&#160;protected]</a></div>
+      <div id="form-success" style="display:none;margin-bottom:1.25rem;font-size:.9rem;color:var(--success);font-weight:500;">Thanks! We will be in touch shortly.</div>
       <div class="trust-strip">
         <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-i18n="cta.trust1">GDPR Compliant</span></span>
         <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="cta.trust2">No credit card required</span></span>
@@ -576,135 +1222,909 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05);}
 <footer>
   <div class="wrap">
     <div class="footer-inner">
-      <a href="#" class="nav-logo" style="text-decoration:none;"><div class="logo-mark">Y</div><span class="logo-wordmark">Your<em>ista</em></span></a>
+      <div>
+        <a href="#" class="nav-logo" style="text-decoration:none;"><div class="logo-mark">Y</div><span class="logo-wordmark">Your<em>ista</em></span></a>
+        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" class="footer-attrib">Created with Perplexity Computer</a>
+      </div>
       <div class="footer-links">
         <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
         <a href="#" data-i18n="footer.terms">Terms</a>
         <a href="#" data-i18n="footer.gdpr">GDPR</a>
         <a href="#" data-i18n="footer.contact">Contact</a>
       </div>
-      <span class="footer-copy" data-i18n="footer.copy">© 2025 Yourista B.V. All rights reserved.</span>
+      <span class="footer-copy" data-i18n="footer.copy">&copy; 2026 Yourista B.V. All rights reserved.</span>
     </div>
   </div>
 </footer>
 
-
 <script>
+/* ═══════════════════════════════════════════════════════
+   YOURISTA — Full Inline JavaScript
+   ═══════════════════════════════════════════════════════ */
 
+/* ── TRANSLATIONS (all 4 languages) ── */
+var i18n = {
+  "en": {
+    "nav.how": "How it works",
+    "nav.features": "Features",
+    "nav.roadmap": "Roadmap",
+    "nav.pricing": "Pricing",
+    "nav.badge": "MVP Live",
+    "nav.cta": "Get Early Access",
+    "hero.eyebrow": "AI-Powered Legal Intelligence",
+    "hero.h1line1": "Legal work,",
+    "hero.h1line2": "reimagined",
+    "hero.h1line3": "by AI.",
+    "hero.body": "Yourista gives law firms a <strong>24/7 AI client assistant</strong> that guides, qualifies and routes clients to the right lawyer, plus an intelligent <strong>office co-pilot</strong> that manages everything behind the scenes.",
+    "hero.seehow": "See how it works",
+    "hero.metric1": "faster intake",
+    "hero.metric2": "Accuracy rate",
+    "hero.metric3": "Guidance",
+    "hero.fp1title": "Meeting scheduled",
+    "hero.fp1sub": "Tomorrow, 10:00 AM",
+    "hero.fp2title": "GDPR Secured",
+    "hero.fp2sub": "End-to-end encrypted",
+    "hero.aiOnline": "AI Online",
+    "hero.chatUser": "I have a business dispute. My partner is breaching our shareholder agreement.",
+    "hero.chatAI": "This is a serious matter under Dutch corporate law. I can connect you with a commercial litigation specialist within 24 hours. May I ask a few quick questions first?",
+    "hero.inputPlaceholder": "Describe your situation...",
+    "logos.label": "Trusted partners and early adopters",
+    "how.label": "How it works",
+    "how.h2a": "From first question",
+    "how.h2b": "to ",
+    "how.h2em": "right lawyer",
+    "how.sub": "Yourista manages the full client journey from the moment someone visits your website to the moment they are in the right hands.",
+    "how.s1h": "Client asks a question",
+    "how.s1p": "The Yourista widget on your website engages visitors instantly, understanding their legal issue in plain language at any time of day.",
+    "how.s2h": "AI qualifies and analyses",
+    "how.s2p": "Our legal AI gathers the right information through guided conversation and builds a structured case brief automatically.",
+    "how.s3h": "Smart match to the right lawyer",
+    "how.s3p": "The matching engine pairs the client with the best-suited lawyer based on case type, jurisdiction and availability.",
+    "how.s4h": "Lawyer receives a full brief",
+    "how.s4p": "Your lawyer receives a complete intake summary before the first consultation, saving time and arriving well prepared.",
+    "how.dashTitle": "Yourista Dashboard",
+    "how.dashBadge": "Live",
+    "how.dc1": "New Inquiries",
+    "how.dc1sub": "+8 today",
+    "how.dc2": "Matches Made",
+    "how.dc2sub": "94% accuracy",
+    "how.dc3": "Conversion",
+    "how.dc3sub": "+12% this week",
+    "how.dc4": "Avg. Response",
+    "how.dc4sub": "vs 4h industry avg",
+    "how.dr1": "Business dispute, shareholder breach",
+    "how.dr2": "Employment contract review",
+    "how.dr3": "IP trademark registration query",
+    "how.dr4": "Corporate restructuring advice",
+    "how.tagNew": "New",
+    "how.tagProg": "In progress",
+    "how.tagDone": "Matched",
+    "feat.label": "Platform Features",
+    "feat.h2a": "Built for ",
+    "feat.h2em": "legal",
+    "feat.h2b": "professionals",
+    "feat.sub": "Two intelligent tools, one for your clients and one for your team, working in perfect harmony.",
+    "feat.f1h": "Intelligent Client Intake",
+    "feat.f1p": "A 24/7 AI that understands problems in plain language and routes clients to exactly the right legal expertise.",
+    "feat.f2h": "Smart Case Matching",
+    "feat.f2p": "Our proprietary engine pairs each client with the best-suited lawyer based on case type, jurisdiction and availability.",
+    "feat.f3h": "GDPR-First Security",
+    "feat.f3p": "Built for European legal compliance from day one, with end-to-end encryption, data sovereignty and full audit trails.",
+    "feat.f4h": "AI Agenda Management",
+    "feat.f4p": "Your intelligent office co-pilot manages schedules, deadlines and priorities automatically so lawyers can focus on what matters.",
+    "feat.f5h": "Document Intelligence",
+    "feat.f5p": "Review, summarise and flag key clauses in contracts and legal filings using our trained legal AI models.",
+    "feat.f6h": "Analytics and Reporting",
+    "feat.f6p": "Full visibility into intake performance, conversion rates and client satisfaction, all in one dashboard.",
+    "feat.phase1live": "\u25cf Phase 1 Live",
+    "feat.phase2soon": "\u25cc Phase 2 Soon",
+    "phases.label": "Product Roadmap",
+    "phases.h2a": "Precision delivery,",
+    "phases.h2em": "phase by phase",
+    "phases.p1badge": "Phase 1 \u00b7 MVP Now",
+    "phases.p1h": "Client-Facing<br/>Assistant",
+    "phases.p1desc": "The intelligent front-end that helps clients find the right legal support, embedded on your firm\u2019s website and available 24 hours a day.",
+    "phases.p1f1": "Conversational legal intake",
+    "phases.p1f2": "Lawyer matching engine",
+    "phases.p1f3": "Multi-language support (NL/EN/FR/DE)",
+    "phases.p1f4": "Website embed widget",
+    "phases.p1f5": "Client portal and case tracking",
+    "phases.p1f6": "Analytics dashboard",
+    "phases.p2badge": "Phase 2 \u00b7 Coming",
+    "phases.p2h": "Lawyer Office<br/>Assistant",
+    "phases.p2desc": "An AI co-pilot that lives inside your practice, managing time, tasks, documents and client communications with remarkable intelligence.",
+    "phases.p2f1": "AI agenda and calendar management",
+    "phases.p2f2": "Deadline and task tracking",
+    "phases.p2f3": "Document summarisation",
+    "phases.p2f4": "Case timeline builder",
+    "phases.p2f5": "Billing and time capture",
+    "phases.p2f6": "Internal knowledge base AI",
+    "testi.label": "What they say",
+    "testi.h2a": "Trusted by legal",
+    "testi.h2em": "professionals",
+    "testi.sub": "Early partners are already seeing transformative results.",
+    "testi.t1": "\"Yourista has completely transformed how new clients reach us. The AI handles initial triage beautifully. Clients feel heard and we receive perfectly qualified leads.\"",
+    "testi.t2": "\"As a solo practitioner I was spending hours on emails before meeting a client. Yourista eliminated that entirely. It is like having a smart receptionist who never sleeps.\"",
+    "testi.t2role": "Independent Attorney, Amsterdam",
+    "testi.t3": "\"The matching accuracy is impressive. Clients arrive for consultations already pre-qualified. Our conversion from inquiry to mandate has increased by over 40%.\"",
+    "price.label": "Transparent Pricing",
+    "price.h2a": "Simple, honest",
+    "price.h2em": "pricing",
+    "price.sub": "Two focused products. No hidden fees. Cancel anytime.",
+    "price.p1name": "Website Assistant",
+    "price.permonth": "/month",
+    "price.p1desc": "AI-powered client-facing assistant on your firm\u2019s website. Phase 1, available now.",
+    "price.p1f1": "Unlimited client conversations",
+    "price.p1f2": "Website embed widget",
+    "price.p1f3": "Smart lawyer matching",
+    "price.p1f4": "Multi-language (NL/EN/FR/DE)",
+    "price.p1f5": "Analytics dashboard",
+    "price.p1f6": "GDPR compliant",
+    "price.p1btn": "Get Started",
+    "price.fullsuite": "Full Suite",
+    "price.p2name": "Your Office Manager",
+    "price.p2desc": "Website Assistant plus AI office co-pilot for lawyers. Phases 1 and 2 combined.",
+    "price.p2f1": "Everything in Website Assistant",
+    "price.p2f2": "AI agenda management",
+    "price.p2f3": "Deadline and task tracking",
+    "price.p2f4": "Document summarisation",
+    "price.p2f5": "Priority support",
+    "price.p2f6": "Phase 2 early access",
+    "price.p2btn": "Start 14-Day Trial",
+    "price.p3name": "Enterprise",
+    "price.custom": "Custom",
+    "price.p3desc": "For large firms needing custom integrations, dedicated SLAs and on-premise deployment.",
+    "price.p3f1": "Everything in Office Manager",
+    "price.p3f2": "Custom AI model training",
+    "price.p3f3": "Dedicated account manager",
+    "price.p3f4": "On-premise deployment",
+    "price.p3f5": "Custom SLA agreement",
+    "price.p3btn": "Contact Sales",
+    "cta.label": "Early Access",
+    "cta.h2a": "Ready to transform",
+    "cta.h2em": "your legal practice?",
+    "cta.sub": "Join early access. Be the first law firm to experience Yourista in action.",
+    "cta.placeholder": "your@lawfirm.com",
+    "cta.btn": "Get Access",
+    "cta.trust1": "GDPR Compliant",
+    "cta.trust2": "No credit card required",
+    "cta.trust3": "Cancel anytime",
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms",
+    "footer.gdpr": "GDPR",
+    "footer.contact": "Contact",
+    "footer.copy": "\u00a9 2026 Yourista B.V. All rights reserved."
+  },
+  "nl": {
+    "nav.how": "Hoe het werkt",
+    "nav.features": "Functies",
+    "nav.roadmap": "Routekaart",
+    "nav.pricing": "Prijzen",
+    "nav.badge": "MVP Live",
+    "nav.cta": "Vraag vroege toegang aan",
+    "hero.eyebrow": "AI-gestuurde juridische intelligentie",
+    "hero.h1line1": "Juridisch werk,",
+    "hero.h1line2": "opnieuw vormgegeven",
+    "hero.h1line3": "door AI.",
+    "hero.body": "Yourista geeft advocatenkantoren een <strong>24/7 AI-cli\u00ebntassistent</strong> die cli\u00ebnten begeleidt, kwalificeert en doorverwijst naar de juiste advocaat, plus een intelligente <strong>kantoorassistent</strong> die alles achter de schermen regelt.",
+    "hero.seehow": "Bekijk hoe het werkt",
+    "hero.metric1": "snellere intake",
+    "hero.metric2": "Nauwkeurigheid",
+    "hero.metric3": "Begeleiding",
+    "hero.fp1title": "Afspraak gepland",
+    "hero.fp1sub": "Morgen, 10:00 uur",
+    "hero.fp2title": "AVG-beveiligd",
+    "hero.fp2sub": "End-to-end versleuteld",
+    "hero.aiOnline": "AI Online",
+    "hero.chatUser": "Ik heb een zakelijk geschil. Mijn zakenpartner schendt onze aandeelhoudersovereenkomst.",
+    "hero.chatAI": "Dit is een ernstige zaak onder het Nederlands vennootschapsrecht. Ik kan u binnen 24 uur koppelen aan een specialist in commerci\u00eble geschillen. Mag ik u eerst een paar korte vragen stellen?",
+    "hero.inputPlaceholder": "Beschrijf uw situatie...",
+    "logos.label": "Vertrouwde partners en vroege gebruikers",
+    "how.label": "Hoe het werkt",
+    "how.h2a": "Van eerste vraag",
+    "how.h2b": "naar ",
+    "how.h2em": "de juiste advocaat",
+    "how.sub": "Yourista beheert de volledige cli\u00ebntreis \u2014 van het moment dat iemand uw website bezoekt tot het moment dat zij in goede handen zijn.",
+    "how.s1h": "Cli\u00ebnt stelt een vraag",
+    "how.s1p": "De Yourista-widget op uw website spreekt bezoekers direct aan en begrijpt hun juridisch probleem in begrijpelijke taal, op elk moment van de dag.",
+    "how.s2h": "AI kwalificeert en analyseert",
+    "how.s2p": "Onze juridische AI verzamelt de juiste informatie via een begeleid gesprek en stelt automatisch een gestructureerde zaakbeschrijving op.",
+    "how.s3h": "Slimme koppeling aan de juiste advocaat",
+    "how.s3p": "Het koppelingsysteem verbindt de cli\u00ebnt met de meest geschikte advocaat op basis van zaaktype, rechtsgebied en beschikbaarheid.",
+    "how.s4h": "Advocaat ontvangt een volledig dossier",
+    "how.s4p": "Uw advocaat ontvangt v\u00f3\u00f3r de eerste consultatie een volledig intakeoverzicht, wat tijd bespaart en zorgt voor een optimale voorbereiding.",
+    "how.dashTitle": "Yourista Dashboard",
+    "how.dashBadge": "Live",
+    "how.dc1": "Nieuwe aanvragen",
+    "how.dc1sub": "+8 vandaag",
+    "how.dc2": "Koppelingen gemaakt",
+    "how.dc2sub": "94% nauwkeurigheid",
+    "how.dc3": "Conversie",
+    "how.dc3sub": "+12% deze week",
+    "how.dc4": "Gem. reactietijd",
+    "how.dc4sub": "vs 4u branchegemiddelde",
+    "how.dr1": "Zakelijk geschil, schending aandeelhoudersovereenkomst",
+    "how.dr2": "Beoordeling arbeidsovereenkomst",
+    "how.dr3": "IE-merkregistratie aanvraag",
+    "how.dr4": "Advies bedrijfsherstructurering",
+    "how.tagNew": "Nieuw",
+    "how.tagProg": "In behandeling",
+    "how.tagDone": "Gekoppeld",
+    "feat.label": "Platformfuncties",
+    "feat.h2a": "Gebouwd voor ",
+    "feat.h2em": "juridische",
+    "feat.h2b": "professionals",
+    "feat.sub": "Twee intelligente tools \u2014 \u00e9\u00e9n voor uw cli\u00ebnten en \u00e9\u00e9n voor uw team \u2014 die in perfecte harmonie samenwerken.",
+    "feat.f1h": "Intelligente cli\u00ebntintake",
+    "feat.f1p": "Een 24/7-AI die juridische problemen in begrijpelijke taal begrijpt en cli\u00ebnten doorverwijst naar precies de juiste juridische expertise.",
+    "feat.f2h": "Slimme zaakkoppeling",
+    "feat.f2p": "Ons systeem koppelt elke cli\u00ebnt aan de meest geschikte advocaat op basis van zaaktype, rechtsgebied en beschikbaarheid.",
+    "feat.f3h": "AVG-conform beveiliging",
+    "feat.f3p": "Vanaf dag \u00e9\u00e9n gebouwd voor Europese juridische naleving, met end-to-end versleuteling, datasoevereiniteit en volledige audittrails.",
+    "feat.f4h": "AI-agendabeheer",
+    "feat.f4p": "Uw intelligente kantoorassistent beheert automatisch agenda\u2019s, deadlines en prioriteiten, zodat advocaten zich kunnen richten op wat echt telt.",
+    "feat.f5h": "Documentintelligentie",
+    "feat.f5p": "Beoordeel, vat samen en markeer sleutelclausules in contracten en juridische documenten met onze getrainde juridische AI-modellen.",
+    "feat.f6h": "Analyse en rapportage",
+    "feat.f6p": "Volledig inzicht in intakeprestaties, conversiepercentages en cli\u00ebnttevredenheid \u2014 alles op \u00e9\u00e9n dashboard.",
+    "feat.phase1live": "\u25cf Fase 1 Beschikbaar",
+    "feat.phase2soon": "\u25cc Fase 2 Binnenkort",
+    "phases.label": "Productroutekaart",
+    "phases.h2a": "Nauwkeurige oplevering,",
+    "phases.h2em": "fase voor fase",
+    "phases.p1badge": "Fase 1 \u00b7 MVP Nu",
+    "phases.p1h": "Klantgerichte<br/>assistent",
+    "phases.p1desc": "De intelligente front-end die cli\u00ebnten helpt de juiste juridische ondersteuning te vinden, ingebouwd op uw kantoorwebsite en 24 uur per dag beschikbaar.",
+    "phases.p1f1": "Conversationele juridische intake",
+    "phases.p1f2": "Advocatenkoppelingsysteem",
+    "phases.p1f3": "Meertalige ondersteuning (NL/EN/FR/DE)",
+    "phases.p1f4": "Website-insluitwidget",
+    "phases.p1f5": "Cli\u00ebntportaal en zaakopvolging",
+    "phases.p1f6": "Analysedashboard",
+    "phases.p2badge": "Fase 2 \u00b7 Binnenkort",
+    "phases.p2h": "Advocaten-<br/>kantoorassistent",
+    "phases.p2desc": "Een AI-assistent in uw praktijk die tijd, taken, documenten en cli\u00ebntcommunicatie met opmerkelijke intelligentie beheert.",
+    "phases.p2f1": "AI-agenda en kalenderbeheer",
+    "phases.p2f2": "Deadline- en taakopvolging",
+    "phases.p2f3": "Documentsamenvatting",
+    "phases.p2f4": "Zaaktijdlijnopbouw",
+    "phases.p2f5": "Facturatie en tijdregistratie",
+    "phases.p2f6": "Interne kennisbank-AI",
+    "testi.label": "Wat zij zeggen",
+    "testi.h2a": "Vertrouwd door juridische",
+    "testi.h2em": "professionals",
+    "testi.sub": "Vroege partners zien al transformatieve resultaten.",
+    "testi.t1": "\"Yourista heeft volledig veranderd hoe nieuwe cli\u00ebnten ons bereiken. De AI verzorgt de eerste triage uitstekend. Cli\u00ebnten voelen zich gehoord en wij ontvangen perfect gekwalificeerde aanvragen.\"",
+    "testi.t2": "\"Als soloadvocaat was ik uren kwijt aan e-mails voordat ik een cli\u00ebnt ontmoette. Yourista heeft dat volledig weggenomen. Het is alsof je een slimme receptioniste hebt die nooit slaapt.\"",
+    "testi.t2role": "Zelfstandig advocaat, Amsterdam",
+    "testi.t3": "\"De nauwkeurigheid van de koppelingen is indrukwekkend. Cli\u00ebnten komen al vooraf gekwalificeerd aan voor consultaties. Onze conversie van aanvraag naar opdracht is met meer dan 40% gestegen.\"",
+    "price.label": "Transparante prijzen",
+    "price.h2a": "Eenvoudige, eerlijke",
+    "price.h2em": "prijzen",
+    "price.sub": "Twee gerichte producten. Geen verborgen kosten. Op elk moment opzegbaar.",
+    "price.p1name": "Websiteassistent",
+    "price.permonth": "/maand",
+    "price.p1desc": "AI-gestuurde cli\u00ebntgerichte assistent op de website van uw kantoor. Fase 1, nu beschikbaar.",
+    "price.p1f1": "Onbeperkte cli\u00ebntgesprekken",
+    "price.p1f2": "Website-insluitwidget",
+    "price.p1f3": "Slimme advocatenkoppeling",
+    "price.p1f4": "Meertalig (NL/EN/FR/DE)",
+    "price.p1f5": "Analysedashboard",
+    "price.p1f6": "AVG-conform",
+    "price.p1btn": "Aan de slag",
+    "price.fullsuite": "Volledig pakket",
+    "price.p2name": "Uw kantoormanager",
+    "price.p2desc": "Websiteassistent plus AI-kantoorassistent voor advocaten. Fase 1 en 2 gecombineerd.",
+    "price.p2f1": "Alles van de websiteassistent",
+    "price.p2f2": "AI-agendabeheer",
+    "price.p2f3": "Deadline- en taakopvolging",
+    "price.p2f4": "Documentsamenvatting",
+    "price.p2f5": "Prioriteitsondersteuning",
+    "price.p2f6": "Vroege toegang tot fase 2",
+    "price.p2btn": "Start 14-daagse proefperiode",
+    "price.p3name": "Enterprise",
+    "price.custom": "Op maat",
+    "price.p3desc": "Voor grote kantoren die aangepaste integraties, toegewijde SLA\u2019s en on-premise implementatie vereisen.",
+    "price.p3f1": "Alles van de kantoormanager",
+    "price.p3f2": "Aangepaste AI-modeltraining",
+    "price.p3f3": "Toegewijd accountmanager",
+    "price.p3f4": "On-premise implementatie",
+    "price.p3f5": "Aangepaste SLA-overeenkomst",
+    "price.p3btn": "Neem contact op",
+    "cta.label": "Vroege toegang",
+    "cta.h2a": "Klaar om uw",
+    "cta.h2em": "juridische praktijk te transformeren?",
+    "cta.sub": "Meld u aan voor vroege toegang. Wees het eerste advocatenkantoor dat Yourista in de praktijk ervaart.",
+    "cta.placeholder": "uw@advocatenkantoor.nl",
+    "cta.btn": "Toegang aanvragen",
+    "cta.trust1": "AVG-conform",
+    "cta.trust2": "Geen creditcard vereist",
+    "cta.trust3": "Op elk moment opzegbaar",
+    "footer.privacy": "Privacybeleid",
+    "footer.terms": "Gebruiksvoorwaarden",
+    "footer.gdpr": "AVG",
+    "footer.contact": "Contact",
+    "footer.copy": "\u00a9 2026 Yourista B.V. Alle rechten voorbehouden."
+  },
+  "de": {
+    "nav.how": "So funktioniert es",
+    "nav.features": "Funktionen",
+    "nav.roadmap": "Roadmap",
+    "nav.pricing": "Preise",
+    "nav.badge": "MVP Live",
+    "nav.cta": "Fr\u00fchen Zugang anfordern",
+    "hero.eyebrow": "KI-gest\u00fctzte Rechtsintelligenz",
+    "hero.h1line1": "Rechtsarbeit,",
+    "hero.h1line2": "neu gedacht",
+    "hero.h1line3": "durch KI.",
+    "hero.body": "Yourista gibt Anwaltskanzleien einen <strong>KI-Mandantenassistenten rund um die Uhr</strong>, der Mandanten leitet, qualifiziert und zum richtigen Anwalt weiterleitet \u2014 plus einen intelligenten <strong>B\u00fcro-Copiloten</strong>, der alles im Hintergrund verwaltet.",
+    "hero.seehow": "So funktioniert es",
+    "hero.metric1": "schnellere Aufnahme",
+    "hero.metric2": "Genauigkeit",
+    "hero.metric3": "Betreuung",
+    "hero.fp1title": "Termin vereinbart",
+    "hero.fp1sub": "Morgen, 10:00 Uhr",
+    "hero.fp2title": "DSGVO-gesichert",
+    "hero.fp2sub": "Ende-zu-Ende verschl\u00fcsselt",
+    "hero.aiOnline": "KI Online",
+    "hero.chatUser": "Ich habe einen Gesch\u00e4ftsstreit. Mein Gesellschafter verst\u00f6\u00dft gegen unseren Gesellschaftervertrag.",
+    "hero.chatAI": "Das ist eine ernste Angelegenheit im deutschen Gesellschaftsrecht. Ich kann Sie innerhalb von 24 Stunden mit einem Spezialisten f\u00fcr Wirtschaftsstreitigkeiten verbinden. Darf ich zun\u00e4chst einige kurze Fragen stellen?",
+    "hero.inputPlaceholder": "Beschreiben Sie Ihre Situation...",
+    "logos.label": "Vertrauenspartner und fr\u00fche Anwender",
+    "how.label": "So funktioniert es",
+    "how.h2a": "Von der ersten Frage",
+    "how.h2b": "zum ",
+    "how.h2em": "richtigen Anwalt",
+    "how.sub": "Yourista begleitet die gesamte Mandantenreise \u2014 vom ersten Website-Besuch bis zur \u00dcbergabe an die richtigen H\u00e4nde.",
+    "how.s1h": "Mandant stellt eine Frage",
+    "how.s1p": "Das Yourista-Widget auf Ihrer Website spricht Besucher sofort an und versteht ihr rechtliches Anliegen in verst\u00e4ndlicher Sprache \u2014 rund um die Uhr.",
+    "how.s2h": "KI qualifiziert und analysiert",
+    "how.s2p": "Unsere Rechts-KI sammelt die relevanten Informationen im gef\u00fchrten Gespr\u00e4ch und erstellt automatisch eine strukturierte Fallzusammenfassung.",
+    "how.s3h": "Intelligente Zuweisung zum richtigen Anwalt",
+    "how.s3p": "Das Matching-System verbindet den Mandanten mit dem am besten geeigneten Anwalt auf Basis von Falltyp, Rechtsgebiet und Verf\u00fcgbarkeit.",
+    "how.s4h": "Anwalt erh\u00e4lt eine vollst\u00e4ndige Akte",
+    "how.s4p": "Ihr Anwalt erh\u00e4lt vor der ersten Beratung eine vollst\u00e4ndige Aufnahme\u00fcbersicht \u2014 zeitsparend und optimal vorbereitet.",
+    "how.dashTitle": "Yourista Dashboard",
+    "how.dashBadge": "Live",
+    "how.dc1": "Neue Anfragen",
+    "how.dc1sub": "+8 heute",
+    "how.dc2": "Zuweisungen",
+    "how.dc2sub": "94% Genauigkeit",
+    "how.dc3": "Konversion",
+    "how.dc3sub": "+12% diese Woche",
+    "how.dc4": "\u00d8 Reaktionszeit",
+    "how.dc4sub": "vs 4h Branchendurchschnitt",
+    "how.dr1": "Gesellschafterstreit, Versto\u00df gegen Gesellschaftervertrag",
+    "how.dr2": "Pr\u00fcfung des Arbeitsvertrags",
+    "how.dr3": "Anfrage zur Markenanmeldung",
+    "how.dr4": "Beratung zur Unternehmensrestrukturierung",
+    "how.tagNew": "Neu",
+    "how.tagProg": "In Bearbeitung",
+    "how.tagDone": "Zugewiesen",
+    "feat.label": "Plattformfunktionen",
+    "feat.h2a": "Entwickelt f\u00fcr ",
+    "feat.h2em": "Rechts-",
+    "feat.h2b": "profis",
+    "feat.sub": "Zwei intelligente Tools \u2014 eines f\u00fcr Ihre Mandanten und eines f\u00fcr Ihr Team \u2014 in perfekter Harmonie.",
+    "feat.f1h": "Intelligente Mandantenaufnahme",
+    "feat.f1p": "Eine 24/7-KI, die Anliegen in verst\u00e4ndlicher Sprache erfasst und Mandanten gezielt zur richtigen Rechtsexpertise leitet.",
+    "feat.f2h": "Intelligentes Fall-Matching",
+    "feat.f2p": "Unser System verbindet jeden Mandanten mit dem am besten geeigneten Anwalt \u2014 nach Falltyp, Rechtsgebiet und Verf\u00fcgbarkeit.",
+    "feat.f3h": "DSGVO-konforme Sicherheit",
+    "feat.f3p": "Von Anfang an f\u00fcr die europ\u00e4ische Rechtskonformit\u00e4t entwickelt \u2014 mit Ende-zu-Ende-Verschl\u00fcsselung, Datensouver\u00e4nit\u00e4t und l\u00fcckenlosen Pr\u00fcfpfaden.",
+    "feat.f4h": "KI-Terminverwaltung",
+    "feat.f4p": "Ihr intelligenter B\u00fcro-Copilot verwaltet Terminpl\u00e4ne, Fristen und Priorit\u00e4ten automatisch \u2014 damit Anw\u00e4lte sich auf das Wesentliche konzentrieren k\u00f6nnen.",
+    "feat.f5h": "Dokumentenintelligenz",
+    "feat.f5p": "Pr\u00fcfen, zusammenfassen und markieren Sie wichtige Klauseln in Vertr\u00e4gen und Schrifts\u00e4tzen mit unseren trainierten KI-Rechtsmodellen.",
+    "feat.f6h": "Analyse und Berichtswesen",
+    "feat.f6p": "Vollst\u00e4ndige Transparenz \u00fcber Aufnahmeleistung, Konversionsraten und Mandantenzufriedenheit \u2014 alles in einem Dashboard.",
+    "feat.phase1live": "\u25cf Phase 1 Verf\u00fcgbar",
+    "feat.phase2soon": "\u25cc Phase 2 Demn\u00e4chst",
+    "phases.label": "Produkt-Roadmap",
+    "phases.h2a": "Pr\u00e4zise Bereitstellung,",
+    "phases.h2em": "Phase f\u00fcr Phase",
+    "phases.p1badge": "Phase 1 \u00b7 MVP Jetzt",
+    "phases.p1h": "Mandanten-<br/>Assistent",
+    "phases.p1desc": "Das intelligente Frontend, das Mandanten hilft, die richtige Rechtsunterst\u00fctzung zu finden \u2014 eingebettet auf Ihrer Kanzleiwebsite und rund um die Uhr verf\u00fcgbar.",
+    "phases.p1f1": "Konversationelle Mandantenaufnahme",
+    "phases.p1f2": "Anwaltszuweisungssystem",
+    "phases.p1f3": "Mehrsprachige Unterst\u00fctzung (NL/EN/FR/DE)",
+    "phases.p1f4": "Website-Einbettungs-Widget",
+    "phases.p1f5": "Mandantenportal und Fallverfolgung",
+    "phases.p1f6": "Analyse-Dashboard",
+    "phases.p2badge": "Phase 2 \u00b7 Demn\u00e4chst",
+    "phases.p2h": "Kanzlei-<br/>Assistent",
+    "phases.p2desc": "Ein KI-Copilot in Ihrer Kanzlei, der Zeit, Aufgaben, Dokumente und Mandantenkommunikation mit bemerkenswerter Intelligenz verwaltet.",
+    "phases.p2f1": "KI-Termin- und Kalenderverwaltung",
+    "phases.p2f2": "Fristen- und Aufgabenverfolgung",
+    "phases.p2f3": "Dokumentenzusammenfassung",
+    "phases.p2f4": "Fall-Zeitstrahl-Builder",
+    "phases.p2f5": "Abrechnung und Zeiterfassung",
+    "phases.p2f6": "Interne Wissensdatenbank-KI",
+    "testi.label": "Was sie sagen",
+    "testi.h2a": "Vertrauen von",
+    "testi.h2em": "Rechtsprofis",
+    "testi.sub": "Fr\u00fche Partner sehen bereits transformative Ergebnisse.",
+    "testi.t1": "\"Yourista hat vollst\u00e4ndig ver\u00e4ndert, wie neue Mandanten uns erreichen. Die KI \u00fcbernimmt die erste Triage hervorragend. Mandanten f\u00fchlen sich geh\u00f6rt und wir erhalten perfekt qualifizierte Anfragen.\"",
+    "testi.t2": "\"Als Einzelanwalt verbrachte ich Stunden mit E-Mails, bevor ich einen Mandanten traf. Yourista hat das vollst\u00e4ndig eliminiert. Es ist wie eine intelligente Rezeptionistin, die nie schl\u00e4ft.\"",
+    "testi.t2role": "Selbstst\u00e4ndiger Rechtsanwalt, Amsterdam",
+    "testi.t3": "\"Die Matching-Genauigkeit ist beeindruckend. Mandanten kommen bereits vorqualifiziert zu Beratungsgespr\u00e4chen. Unsere Konversion von Anfrage zu Mandat ist um \u00fcber 40% gestiegen.\"",
+    "price.label": "Transparente Preise",
+    "price.h2a": "Einfache, faire",
+    "price.h2em": "Preise",
+    "price.sub": "Zwei fokussierte Produkte. Keine versteckten Geb\u00fchren. Jederzeit k\u00fcndbar.",
+    "price.p1name": "Website-Assistent",
+    "price.permonth": "/Monat",
+    "price.p1desc": "KI-gest\u00fctzter Mandantenassistent auf der Website Ihrer Kanzlei. Phase 1, jetzt verf\u00fcgbar.",
+    "price.p1f1": "Unbegrenzte Mandantengespr\u00e4che",
+    "price.p1f2": "Website-Einbettungs-Widget",
+    "price.p1f3": "Intelligentes Anwalts-Matching",
+    "price.p1f4": "Mehrsprachig (NL/EN/FR/DE)",
+    "price.p1f5": "Analyse-Dashboard",
+    "price.p1f6": "DSGVO-konform",
+    "price.p1btn": "Jetzt starten",
+    "price.fullsuite": "Komplettpaket",
+    "price.p2name": "Ihr Kanzlei-Manager",
+    "price.p2desc": "Website-Assistent plus KI-B\u00fcroassistent f\u00fcr Anw\u00e4lte. Phase 1 und 2 kombiniert.",
+    "price.p2f1": "Alles aus dem Website-Assistenten",
+    "price.p2f2": "KI-Terminverwaltung",
+    "price.p2f3": "Fristen- und Aufgabenverfolgung",
+    "price.p2f4": "Dokumentenzusammenfassung",
+    "price.p2f5": "Priorit\u00e4tssupport",
+    "price.p2f6": "Fr\u00fcher Zugang zu Phase 2",
+    "price.p2btn": "14-Tage-Test starten",
+    "price.p3name": "Enterprise",
+    "price.custom": "Individuell",
+    "price.p3desc": "F\u00fcr gro\u00dfe Kanzleien, die individuelle Integrationen, dedizierte SLAs und lokale Bereitstellung ben\u00f6tigen.",
+    "price.p3f1": "Alles aus dem Kanzlei-Manager",
+    "price.p3f2": "Individuelle KI-Modellschulung",
+    "price.p3f3": "Dedizierter Kundenbetreuer",
+    "price.p3f4": "Lokale Bereitstellung",
+    "price.p3f5": "Individuelle SLA-Vereinbarung",
+    "price.p3btn": "Vertrieb kontaktieren",
+    "cta.label": "Fr\u00fcher Zugang",
+    "cta.h2a": "Bereit, Ihre",
+    "cta.h2em": "Kanzlei zu transformieren?",
+    "cta.sub": "Registrieren Sie sich f\u00fcr fr\u00fchen Zugang. Seien Sie die erste Kanzlei, die Yourista im Einsatz erlebt.",
+    "cta.placeholder": "ihre@kanzlei.de",
+    "cta.btn": "Zugang anfordern",
+    "cta.trust1": "DSGVO-konform",
+    "cta.trust2": "Keine Kreditkarte erforderlich",
+    "cta.trust3": "Jederzeit k\u00fcndbar",
+    "footer.privacy": "Datenschutzrichtlinie",
+    "footer.terms": "Nutzungsbedingungen",
+    "footer.gdpr": "DSGVO",
+    "footer.contact": "Kontakt",
+    "footer.copy": "\u00a9 2026 Yourista B.V. Alle Rechte vorbehalten."
+  },
+  "fr": {
+    "nav.how": "Comment \u00e7a marche",
+    "nav.features": "Fonctionnalit\u00e9s",
+    "nav.roadmap": "Feuille de route",
+    "nav.pricing": "Tarifs",
+    "nav.badge": "MVP en ligne",
+    "nav.cta": "Demander un acc\u00e8s anticip\u00e9",
+    "hero.eyebrow": "Intelligence juridique aliment\u00e9e par l\u2019IA",
+    "hero.h1line1": "Le travail juridique,",
+    "hero.h1line2": "r\u00e9invent\u00e9",
+    "hero.h1line3": "par l\u2019IA.",
+    "hero.body": "Yourista offre aux cabinets d\u2019avocats un <strong>assistant client IA disponible 24h/24</strong> qui guide, qualifie et oriente les clients vers le bon avocat, plus un <strong>co-pilote de bureau</strong> intelligent qui g\u00e8re tout en coulisses.",
+    "hero.seehow": "Voir comment \u00e7a marche",
+    "hero.metric1": "plus rapide",
+    "hero.metric2": "Taux de pr\u00e9cision",
+    "hero.metric3": "Accompagnement",
+    "hero.fp1title": "Rendez-vous planifi\u00e9",
+    "hero.fp1sub": "Demain, 10h00",
+    "hero.fp2title": "S\u00e9curis\u00e9 RGPD",
+    "hero.fp2sub": "Chiffrement de bout en bout",
+    "hero.aiOnline": "IA en ligne",
+    "hero.chatUser": "J\u2019ai un litige commercial. Mon associ\u00e9 viole notre pacte d\u2019actionnaires.",
+    "hero.chatAI": "Il s\u2019agit d\u2019une affaire s\u00e9rieuse relevant du droit des soci\u00e9t\u00e9s. Je peux vous mettre en relation avec un sp\u00e9cialiste en contentieux commercial dans les 24 heures. Puis-je vous poser quelques questions pr\u00e9alables ?",
+    "hero.inputPlaceholder": "D\u00e9crivez votre situation...",
+    "logos.label": "Partenaires de confiance et premiers utilisateurs",
+    "how.label": "Comment \u00e7a marche",
+    "how.h2a": "De la premi\u00e8re question",
+    "how.h2b": "au ",
+    "how.h2em": "bon avocat",
+    "how.sub": "Yourista g\u00e8re l\u2019int\u00e9gralit\u00e9 du parcours client \u2014 du moment o\u00f9 quelqu\u2019un visite votre site jusqu\u2019au moment o\u00f9 il est entre de bonnes mains.",
+    "how.s1h": "Le client pose une question",
+    "how.s1p": "Le widget Yourista sur votre site engage les visiteurs instantan\u00e9ment et comprend leur probl\u00e8me juridique en langage courant, \u00e0 toute heure du jour.",
+    "how.s2h": "L\u2019IA qualifie et analyse",
+    "how.s2p": "Notre IA juridique recueille les informations pertinentes au fil d\u2019un entretien guid\u00e9 et constitue automatiquement un dossier structur\u00e9.",
+    "how.s3h": "Mise en relation avec le bon avocat",
+    "how.s3p": "Le moteur associe le client \u00e0 l\u2019avocat le mieux adapt\u00e9 selon le type d\u2019affaire, le domaine juridique et la disponibilit\u00e9.",
+    "how.s4h": "L\u2019avocat re\u00e7oit un dossier complet",
+    "how.s4p": "Votre avocat re\u00e7oit un r\u00e9capitulatif d\u2019accueil complet avant la premi\u00e8re consultation \u2014 pour une pr\u00e9paration optimale et un gain de temps imm\u00e9diat.",
+    "how.dashTitle": "Tableau de bord Yourista",
+    "how.dashBadge": "En direct",
+    "how.dc1": "Nouvelles demandes",
+    "how.dc1sub": "+8 aujourd\u2019hui",
+    "how.dc2": "Mises en relation",
+    "how.dc2sub": "94 % de pr\u00e9cision",
+    "how.dc3": "Conversion",
+    "how.dc3sub": "+12 % cette semaine",
+    "how.dc4": "D\u00e9lai moy.",
+    "how.dc4sub": "vs 4h moyenne du secteur",
+    "how.dr1": "Litige commercial, violation du pacte d\u2019actionnaires",
+    "how.dr2": "R\u00e9vision de contrat de travail",
+    "how.dr3": "Demande d\u2019enregistrement de marque",
+    "how.dr4": "Conseil en restructuration d\u2019entreprise",
+    "how.tagNew": "Nouveau",
+    "how.tagProg": "En cours",
+    "how.tagDone": "Mis en relation",
+    "feat.label": "Fonctionnalit\u00e9s de la plateforme",
+    "feat.h2a": "Con\u00e7u pour les ",
+    "feat.h2em": "professionnels",
+    "feat.h2b": "du droit",
+    "feat.sub": "Deux outils intelligents \u2014 l\u2019un pour vos clients, l\u2019autre pour votre \u00e9quipe \u2014 travaillant en parfaite harmonie.",
+    "feat.f1h": "Accueil client intelligent",
+    "feat.f1p": "Une IA disponible 24h/24 qui comprend les probl\u00e8mes en langage courant et oriente les clients vers la bonne expertise juridique.",
+    "feat.f2h": "Mise en relation intelligente",
+    "feat.f2p": "Notre moteur propri\u00e9taire associe chaque client \u00e0 l\u2019avocat le mieux adapt\u00e9 selon le type d\u2019affaire, le domaine et la disponibilit\u00e9.",
+    "feat.f3h": "S\u00e9curit\u00e9 conforme RGPD",
+    "feat.f3p": "Con\u00e7u d\u00e8s le d\u00e9part pour la conformit\u00e9 juridique europ\u00e9enne \u2014 avec chiffrement de bout en bout, souverainet\u00e9 des donn\u00e9es et pistes d\u2019audit compl\u00e8tes.",
+    "feat.f4h": "Gestion d\u2019agenda par IA",
+    "feat.f4p": "Votre co-pilote de bureau intelligent g\u00e8re automatiquement les plannings, les \u00e9ch\u00e9ances et les priorit\u00e9s \u2014 pour que les avocats se concentrent sur l\u2019essentiel.",
+    "feat.f5h": "Intelligence documentaire",
+    "feat.f5p": "Examinez, r\u00e9sumez et signalez les clauses cl\u00e9s dans les contrats et actes juridiques gr\u00e2ce \u00e0 nos mod\u00e8les IA entra\u00een\u00e9s au droit.",
+    "feat.f6h": "Analyse et rapports",
+    "feat.f6p": "Visibilit\u00e9 compl\u00e8te sur les performances d\u2019accueil, les taux de conversion et la satisfaction client \u2014 le tout dans un seul tableau de bord.",
+    "feat.phase1live": "\u25cf Phase 1 Disponible",
+    "feat.phase2soon": "\u25cc Phase 2 Bient\u00f4t",
+    "phases.label": "Feuille de route",
+    "phases.h2a": "Livraison pr\u00e9cise,",
+    "phases.h2em": "phase par phase",
+    "phases.p1badge": "Phase 1 \u00b7 MVP Disponible",
+    "phases.p1h": "Assistant<br/>client",
+    "phases.p1desc": "Le frontend intelligent qui aide les clients \u00e0 trouver le bon soutien juridique \u2014 int\u00e9gr\u00e9 sur le site de votre cabinet et disponible 24h/24.",
+    "phases.p1f1": "Accueil juridique conversationnel",
+    "phases.p1f2": "Moteur de mise en relation",
+    "phases.p1f3": "Support multilingue (NL/EN/FR/DE)",
+    "phases.p1f4": "Widget d\u2019int\u00e9gration au site",
+    "phases.p1f5": "Portail client et suivi des dossiers",
+    "phases.p1f6": "Tableau de bord analytique",
+    "phases.p2badge": "Phase 2 \u00b7 Bient\u00f4t",
+    "phases.p2h": "Assistant de<br/>bureau juridique",
+    "phases.p2desc": "Un co-pilote IA int\u00e9gr\u00e9 \u00e0 votre cabinet, qui g\u00e8re le temps, les t\u00e2ches, les documents et les communications client avec une intelligence remarquable.",
+    "phases.p2f1": "Gestion IA de l\u2019agenda et du calendrier",
+    "phases.p2f2": "Suivi des \u00e9ch\u00e9ances et des t\u00e2ches",
+    "phases.p2f3": "R\u00e9sum\u00e9 de documents",
+    "phases.p2f4": "Constructeur de chronologie des dossiers",
+    "phases.p2f5": "Facturation et saisie du temps",
+    "phases.p2f6": "IA de base de connaissances interne",
+    "testi.label": "Ce qu\u2019ils disent",
+    "testi.h2a": "La confiance des",
+    "testi.h2em": "professionnels du droit",
+    "testi.sub": "Les premiers partenaires constatent d\u00e9j\u00e0 des r\u00e9sultats transformateurs.",
+    "testi.t1": "\"Yourista a totalement transform\u00e9 la fa\u00e7on dont nos nouveaux clients nous contactent. L\u2019IA g\u00e8re le premier tri \u00e0 merveille. Les clients se sentent \u00e9cout\u00e9s et nous recevons des prospects parfaitement qualifi\u00e9s.\"",
+    "testi.t2": "\"En tant qu\u2019avocat ind\u00e9pendant, je passais des heures sur les e-mails avant de rencontrer un client. Yourista a compl\u00e8tement \u00e9limin\u00e9 cela. C\u2019est comme avoir une r\u00e9ceptionniste intelligente qui ne dort jamais.\"",
+    "testi.t2role": "Avocat ind\u00e9pendant, Amsterdam",
+    "testi.t3": "\"La pr\u00e9cision des mises en relation est impressionnante. Les clients arrivent aux consultations d\u00e9j\u00e0 pr\u00e9qualifi\u00e9s. Notre conversion de demande en mandat a augment\u00e9 de plus de 40 %.\"",
+    "price.label": "Tarification transparente",
+    "price.h2a": "Tarification simple",
+    "price.h2em": "et honn\u00eate",
+    "price.sub": "Deux produits cibl\u00e9s. Aucun frais cach\u00e9. R\u00e9siliation \u00e0 tout moment.",
+    "price.p1name": "Assistant site web",
+    "price.permonth": "/mois",
+    "price.p1desc": "Assistant client IA sur le site de votre cabinet. Phase 1, disponible maintenant.",
+    "price.p1f1": "Conversations client illimit\u00e9es",
+    "price.p1f2": "Widget d\u2019int\u00e9gration au site",
+    "price.p1f3": "Mise en relation intelligente",
+    "price.p1f4": "Multilingue (NL/EN/FR/DE)",
+    "price.p1f5": "Tableau de bord analytique",
+    "price.p1f6": "Conforme RGPD",
+    "price.p1btn": "Commencer",
+    "price.fullsuite": "Suite compl\u00e8te",
+    "price.p2name": "Votre gestionnaire de cabinet",
+    "price.p2desc": "Assistant site web plus co-pilote de bureau IA pour avocats. Phases 1 et 2 combin\u00e9es.",
+    "price.p2f1": "Tout de l\u2019assistant site web",
+    "price.p2f2": "Gestion d\u2019agenda par IA",
+    "price.p2f3": "Suivi des \u00e9ch\u00e9ances et des t\u00e2ches",
+    "price.p2f4": "R\u00e9sum\u00e9 de documents",
+    "price.p2f5": "Assistance prioritaire",
+    "price.p2f6": "Acc\u00e8s anticip\u00e9 \u00e0 la phase 2",
+    "price.p2btn": "Essai gratuit 14 jours",
+    "price.p3name": "Entreprise",
+    "price.custom": "Sur mesure",
+    "price.p3desc": "Pour les grands cabinets n\u00e9cessitant des int\u00e9grations personnalis\u00e9es, des SLA d\u00e9di\u00e9s et un d\u00e9ploiement sur site.",
+    "price.p3f1": "Tout du gestionnaire de cabinet",
+    "price.p3f2": "Formation de mod\u00e8le IA personnalis\u00e9e",
+    "price.p3f3": "Gestionnaire de compte d\u00e9di\u00e9",
+    "price.p3f4": "D\u00e9ploiement sur site",
+    "price.p3f5": "Accord SLA personnalis\u00e9",
+    "price.p3btn": "Contacter les ventes",
+    "cta.label": "Acc\u00e8s anticip\u00e9",
+    "cta.h2a": "Pr\u00eat \u00e0 transformer",
+    "cta.h2em": "votre cabinet juridique ?",
+    "cta.sub": "Rejoignez l\u2019acc\u00e8s anticip\u00e9. Soyez le premier cabinet \u00e0 exp\u00e9rimenter Yourista en action.",
+    "cta.placeholder": "votre@cabinet-avocats.fr",
+    "cta.btn": "Obtenir l\u2019acc\u00e8s",
+    "cta.trust1": "Conforme RGPD",
+    "cta.trust2": "Sans carte bancaire",
+    "cta.trust3": "R\u00e9siliation \u00e0 tout moment",
+    "footer.privacy": "Politique de confidentialit\u00e9",
+    "footer.terms": "Conditions d\u2019utilisation",
+    "footer.gdpr": "RGPD",
+    "footer.contact": "Contact",
+    "footer.copy": "\u00a9 2026 Yourista B.V. Tous droits r\u00e9serv\u00e9s."
+  }
+};
 
-/* ═══════════════════════════════════════
-   TRANSLATIONS
-═══════════════════════════════════════ */
-var i18n={en:{"nav.how":"How it works","nav.features":"Features","nav.roadmap":"Roadmap","nav.pricing":"Pricing","nav.badge":"MVP Live","nav.cta":"Get Early Access","hero.eyebrow":"AI-Powered Legal Intelligence","hero.h1line1":"Legal work,","hero.h1line2":"reimagined","hero.h1line3":"by AI.","hero.body":"Yourista gives law firms a <strong>24/7 AI client assistant</strong> that guides, qualifies and routes clients to the right lawyer, plus an intelligent <strong>office co-pilot</strong> that manages everything behind the scenes.","hero.seehow":"See how it works","hero.metric1":"× faster intake","hero.metric2":"Accuracy rate","hero.metric3":"Guidance","hero.fp1title":"Meeting scheduled","hero.fp1sub":"Tomorrow, 10:00 AM","hero.fp2title":"GDPR Secured","hero.fp2sub":"End-to-end encrypted","hero.aiOnline":"AI Online","hero.chatUser":"I have a business dispute. My partner is breaching our shareholder agreement.","hero.chatAI":"This is a serious matter under Dutch corporate law. I can connect you with a commercial litigation specialist within 24 hours. May I ask a few quick questions first?","hero.inputPlaceholder":"Describe your situation...","logos.label":"Trusted partners and early adopters","how.label":"How it works","how.h2a":"From first question","how.h2b":"to ","how.h2em":"right lawyer","how.sub":"Yourista manages the full client journey from the moment someone visits your website to the moment they are in the right hands.","how.s1h":"Client asks a question","how.s1p":"The Yourista widget on your website engages visitors instantly, understanding their legal issue in plain language at any time of day.","how.s2h":"AI qualifies and analyses","how.s2p":"Our legal AI gathers the right information through guided conversation and builds a structured case brief automatically.","how.s3h":"Smart match to the right lawyer","how.s3p":"The matching engine pairs the client with the best-suited lawyer based on case type, jurisdiction and availability.","how.s4h":"Lawyer receives a full brief","how.s4p":"Your lawyer receives a complete intake summary before the first consultation, saving time and arriving well prepared.","how.dashTitle":"Yourista Dashboard","how.dashBadge":"Live","how.dc1":"New Inquiries","how.dc1sub":"+8 today","how.dc2":"Matches Made","how.dc2sub":"94% accuracy","how.dc3":"Conversion","how.dc3sub":"+12% this week","how.dc4":"Avg. Response","how.dc4sub":"vs 4h industry avg","how.dr1":"Business dispute, shareholder breach","how.dr2":"Employment contract review","how.dr3":"IP trademark registration query","how.dr4":"Corporate restructuring advice","how.tagNew":"New","how.tagProg":"In progress","how.tagDone":"Matched","feat.label":"Platform Features","feat.h2a":"Built for ","feat.h2em":"legal","feat.h2b":"professionals","feat.sub":"Two intelligent tools, one for your clients and one for your team, working in perfect harmony.","feat.f1h":"Intelligent Client Intake","feat.f1p":"A 24/7 AI that understands problems in plain language and routes clients to exactly the right legal expertise.","feat.f2h":"Smart Case Matching","feat.f2p":"Our proprietary engine pairs each client with the best-suited lawyer based on case type, jurisdiction and availability.","feat.f3h":"GDPR-First Security","feat.f3p":"Built for European legal compliance from day one, with end-to-end encryption, data sovereignty and full audit trails.","feat.f4h":"AI Agenda Management","feat.f4p":"Your intelligent office co-pilot manages schedules, deadlines and priorities automatically so lawyers can focus on what matters.","feat.f5h":"Document Intelligence","feat.f5p":"Review, summarise and flag key clauses in contracts and legal filings using our trained legal AI models.","feat.f6h":"Analytics and Reporting","feat.f6p":"Full visibility into intake performance, conversion rates and client satisfaction, all in one dashboard.","feat.phase1live":"● Phase 1 Live","feat.phase2soon":"◌ Phase 2 Soon","phases.label":"Product Roadmap","phases.h2a":"Precision delivery,","phases.h2em":"phase by phase","phases.p1badge":"Phase 1 · MVP Now","phases.p1h":"Client-Facing<br/>Assistant","phases.p1desc":"The intelligent front-end that helps clients find the right legal support, embedded on your firm's website and available 24 hours a day.","phases.p1f1":"Conversational legal intake","phases.p1f2":"Lawyer matching engine","phases.p1f3":"Multi-language support (NL/EN/FR/DE)","phases.p1f4":"Website embed widget","phases.p1f5":"Client portal and case tracking","phases.p1f6":"Analytics dashboard","phases.p2badge":"Phase 2 · Coming","phases.p2h":"Lawyer Office<br/>Assistant","phases.p2desc":"An AI co-pilot that lives inside your practice, managing time, tasks, documents and client communications with remarkable intelligence.","phases.p2f1":"AI agenda and calendar management","phases.p2f2":"Deadline and task tracking","phases.p2f3":"Document summarisation","phases.p2f4":"Case timeline builder","phases.p2f5":"Billing and time capture","phases.p2f6":"Internal knowledge base AI","testi.label":"What they say","testi.h2a":"Trusted by legal","testi.h2em":"professionals","testi.sub":"Early partners are already seeing transformative results.","testi.t1":"\"Yourista has completely transformed how new clients reach us. The AI handles initial triage beautifully. Clients feel heard and we receive perfectly qualified leads.\"","testi.t2":"\"As a solo practitioner I was spending hours on emails before meeting a client. Yourista eliminated that entirely. It is like having a smart receptionist who never sleeps.\"","testi.t2role":"Independent Attorney, Amsterdam","testi.t3":"\"The matching accuracy is impressive. Clients arrive for consultations already pre-qualified. Our conversion from inquiry to mandate has increased by over 40%.\"","price.label":"Transparent Pricing","price.h2a":"Simple, honest","price.h2em":"pricing","price.sub":"Two focused products. No hidden fees. Cancel anytime.","price.p1name":"Website Assistant","price.permonth":"/month","price.p1desc":"AI-powered client-facing assistant on your firm's website. Phase 1, available now.","price.p1f1":"Unlimited client conversations","price.p1f2":"Website embed widget","price.p1f3":"Smart lawyer matching","price.p1f4":"Multi-language (NL/EN/FR/DE)","price.p1f5":"Analytics dashboard","price.p1f6":"GDPR compliant","price.p1btn":"Get Started","price.fullsuite":"Full Suite","price.p2name":"Your Office Manager","price.p2desc":"Website Assistant plus AI office co-pilot for lawyers. Phases 1 and 2 combined.","price.p2f1":"Everything in Website Assistant","price.p2f2":"AI agenda management","price.p2f3":"Deadline and task tracking","price.p2f4":"Document summarisation","price.p2f5":"Priority support","price.p2f6":"Phase 2 early access","price.p2btn":"Start 14-Day Trial","price.p3name":"Enterprise","price.custom":"Custom","price.p3desc":"For large firms needing custom integrations, dedicated SLAs and on-premise deployment.","price.p3f1":"Everything in Office Manager","price.p3f2":"Custom AI model training","price.p3f3":"Dedicated account manager","price.p3f4":"On-premise deployment","price.p3f5":"Custom SLA agreement","price.p3btn":"Contact Sales","cta.label":"Early Access","cta.h2a":"Ready to transform","cta.h2em":"your legal practice?","cta.sub":"Join early access. Be the first law firm to experience Yourista in action.","cta.placeholder":"your@lawfirm.com","cta.btn":"Get Access","cta.trust1":"GDPR Compliant","cta.trust2":"No credit card required","cta.trust3":"Cancel anytime","footer.privacy":"Privacy Policy","footer.terms":"Terms","footer.gdpr":"GDPR","footer.contact":"Contact","footer.copy":"© 2025 Yourista B.V. All rights reserved."},nl:{"nav.how":"Hoe het werkt","nav.features":"Functies","nav.roadmap":"Routekaart","nav.pricing":"Prijzen","nav.badge":"MVP Live","nav.cta":"Vroeg toegang aanvragen","hero.eyebrow":"AI-gestuurde juridische intelligentie","hero.h1line1":"Juridisch werk,","hero.h1line2":"heruitgevonden","hero.h1line3":"door AI.","hero.body":"Yourista geeft advocatenkantoren een <strong>AI-assistent beschikbaar 24/7</strong> die klanten begeleidt, kwalificeert en doorverwijst naar de juiste advocaat, plus een intelligente <strong>kantoorassistent</strong> die alles op de achtergrond regelt.","hero.seehow":"Bekijk hoe het werkt","hero.metric1":"× snellere opname","hero.metric2":"Nauwkeurigheid","hero.metric3":"Begeleiding","hero.fp1title":"Afspraak gepland","hero.fp1sub":"Morgen, 10:00 uur","hero.fp2title":"GDPR Beveiligd","hero.fp2sub":"End-to-end versleuteld","hero.aiOnline":"AI Online","hero.chatUser":"Ik heb een zakelijk geschil. Mijn partner schendt onze aandeelhoudersovereenkomst.","hero.chatAI":"Dit is een ernstige zaak onder Nederlands vennootschapsrecht. Ik kan u binnen 24 uur koppelen aan een specialist. Mag ik eerst een paar korte vragen stellen?","hero.inputPlaceholder":"Beschrijf uw situatie...","logos.label":"Vertrouwde partners en vroege gebruikers","how.label":"Hoe het werkt","how.h2a":"Van eerste vraag","how.h2b":"naar ","how.h2em":"de juiste advocaat","how.sub":"Yourista beheert de volledige klantreis van het moment dat iemand uw website bezoekt tot het moment dat ze in de juiste handen zijn.","how.s1h":"Klant stelt een vraag","how.s1p":"De Yourista-widget op uw website betrekt bezoekers direct en begrijpt hun juridisch probleem in gewone taal.","how.s2h":"AI kwalificeert en analyseert","how.s2p":"Onze juridische AI verzamelt de juiste informatie via begeleide gesprekken en bouwt automatisch een gestructureerde zaakbeschrijving.","how.s3h":"Slimme koppeling aan de juiste advocaat","how.s3p":"Het koppelingsysteem verbindt de klant met de meest geschikte advocaat op basis van zaaktype, jurisdictie en beschikbaarheid.","how.s4h":"Advocaat ontvangt een volledig dossier","how.s4p":"Uw advocaat ontvangt voor de eerste consultatie een volledig intake-overzicht, wat tijd bespaart en zorgt voor een goede voorbereiding.","how.dashTitle":"Yourista Dashboard","how.dashBadge":"Live","how.dc1":"Nieuwe aanvragen","how.dc1sub":"+8 vandaag","how.dc2":"Koppelingen gemaakt","how.dc2sub":"94% nauwkeurigheid","how.dc3":"Conversie","how.dc3sub":"+12% deze week","how.dc4":"Gem. reactietijd","how.dc4sub":"vs 4u branchegemiddelde","how.dr1":"Zakelijk geschil, schending aandeelhoudersovereenkomst","how.dr2":"Arbeidscontract beoordeling","how.dr3":"IE merkregistratie aanvraag","how.dr4":"Advies herstructurering bedrijf","how.tagNew":"Nieuw","how.tagProg":"In behandeling","how.tagDone":"Gekoppeld","feat.label":"Platformfuncties","feat.h2a":"Gebouwd voor ","feat.h2em":"juridische","feat.h2b":"professionals","feat.sub":"Twee intelligente tools, één voor uw klanten en één voor uw team, die in perfecte harmonie samenwerken.","feat.f1h":"Intelligente klantopname","feat.f1p":"Een 24/7 AI die problemen in gewone taal begrijpt en klanten doorverwijst naar precies de juiste juridische expertise.","feat.f2h":"Slimme zaakkoppeling","feat.f2p":"Ons systeem koppelt elke klant aan de meest geschikte advocaat op basis van zaaktype, jurisdictie en beschikbaarheid.","feat.f3h":"GDPR-eerste beveiliging","feat.f3p":"Gebouwd voor Europese juridische naleving vanaf dag één, met end-to-end versleuteling en volledige audittrails.","feat.f4h":"AI-agendabeheer","feat.f4p":"Uw intelligente kantoorassistent beheert automatisch roosters, deadlines en prioriteiten.","feat.f5h":"Documentintelligentie","feat.f5p":"Beoordeel, vat samen en markeer belangrijke clausules in contracten met onze getrainde AI-modellen.","feat.f6h":"Analyse en rapportage","feat.f6p":"Volledig inzicht in intake-prestaties, conversiepercentages en klanttevredenheid op één dashboard.","feat.phase1live":"● Fase 1 Beschikbaar","feat.phase2soon":"◌ Fase 2 Binnenkort","phases.label":"Productroutekaart","phases.h2a":"Nauwkeurige levering,","phases.h2em":"fase voor fase","phases.p1badge":"Fase 1 · MVP Nu","phases.p1h":"Klantgerichte<br/>assistent","phases.p1desc":"De intelligente front-end die klanten helpt de juiste juridische ondersteuning te vinden, ingebed op uw website en 24 uur per dag beschikbaar.","phases.p1f1":"Conversationele juridische intake","phases.p1f2":"Advocatenkoppelingsysteem","phases.p1f3":"Meertalige ondersteuning (NL/EN/FR/DE)","phases.p1f4":"Website-insluitwidget","phases.p1f5":"Klantportaal en zaakopvolging","phases.p1f6":"Analytisch dashboard","phases.p2badge":"Fase 2 · Binnenkort","phases.p2h":"Advocaten-<br/>kantoorassistent","phases.p2desc":"Een AI-copiloot die leeft in uw praktijk en tijd, taken, documenten en klantcommunicatie beheert.","phases.p2f1":"AI-agenda en kalenderbeheer","phases.p2f2":"Deadline en taakopvolging","phases.p2f3":"Documentsamenvatting","phases.p2f4":"Zaaktijdlijnbouwer","phases.p2f5":"Facturatie en tijdregistratie","phases.p2f6":"Interne kennisbank AI","testi.label":"Wat zij zeggen","testi.h2a":"Vertrouwd door juridische","testi.h2em":"professionals","testi.sub":"Vroege partners zien al transformatieve resultaten.","testi.t1":"\"Yourista heeft volledig veranderd hoe nieuwe klanten ons bereiken. De AI handelt de eerste triage prachtig af. Klanten voelen zich gehoord en wij ontvangen perfect gekwalificeerde leads.\"","testi.t2":"\"Als soloadvocaat besteedde ik uren aan e-mails voordat ik een klant ontmoette. Yourista heeft dat volledig geëlimineerd. Het is alsof je een slimme receptionist hebt die nooit slaapt.\"","testi.t2role":"Zelfstandig advocaat, Amsterdam","testi.t3":"\"De nauwkeurigheid van de koppelingen is indrukwekkend. Klanten komen al vooraf gekwalificeerd aan voor consultaties. Onze conversie is met meer dan 40% gestegen.\"","price.label":"Transparante prijzen","price.h2a":"Eenvoudige, eerlijke","price.h2em":"prijzen","price.sub":"Twee gerichte producten. Geen verborgen kosten. Altijd opzegbaar.","price.p1name":"Websiteassistent","price.permonth":"/maand","price.p1desc":"AI-gestuurde klantgerichte assistent op de website van uw kantoor. Fase 1, nu beschikbaar.","price.p1f1":"Onbeperkte klantgesprekken","price.p1f2":"Website-insluitwidget","price.p1f3":"Slimme advocatenkoppeling","price.p1f4":"Meertalig (NL/EN/FR/DE)","price.p1f5":"Analytisch dashboard","price.p1f6":"GDPR-conform","price.p1btn":"Aan de slag","price.fullsuite":"Volledig pakket","price.p2name":"Uw kantoormanager","price.p2desc":"Websiteassistent plus AI-kantoorassistent voor advocaten. Fase 1 en 2 gecombineerd.","price.p2f1":"Alles van websiteassistent","price.p2f2":"AI-agendabeheer","price.p2f3":"Deadline en taakopvolging","price.p2f4":"Documentsamenvatting","price.p2f5":"Prioriteitsondersteuning","price.p2f6":"Vroege toegang fase 2","price.p2btn":"Start 14-daagse proef","price.p3name":"Enterprise","price.custom":"Op maat","price.p3desc":"Voor grote kantoren die aangepaste integraties en implementatie op locatie nodig hebben.","price.p3f1":"Alles van kantoormanager","price.p3f2":"Aangepaste AI-modeltraining","price.p3f3":"Toegewijd accountmanager","price.p3f4":"Implementatie op locatie","price.p3f5":"Aangepaste SLA-overeenkomst","price.p3btn":"Contact opnemen","cta.label":"Vroege toegang","cta.h2a":"Klaar om uw","cta.h2em":"juridische praktijk te transformeren?","cta.sub":"Meld u aan voor vroege toegang. Wees het eerste advocatenkantoor dat Yourista in actie ervaart.","cta.placeholder":"uw@advocatenkantoor.nl","cta.btn":"Toegang aanvragen","cta.trust1":"GDPR-conform","cta.trust2":"Geen creditcard vereist","cta.trust3":"Altijd opzegbaar","footer.privacy":"Privacybeleid","footer.terms":"Gebruiksvoorwaarden","footer.gdpr":"GDPR","footer.contact":"Contact","footer.copy":"© 2025 Yourista B.V. Alle rechten voorbehouden."},de:{"nav.how":"So funktioniert es","nav.features":"Funktionen","nav.roadmap":"Roadmap","nav.pricing":"Preise","nav.badge":"MVP Live","nav.cta":"Frühen Zugang erhalten","hero.eyebrow":"KI-gestützte Rechtsintelligenz","hero.h1line1":"Rechtsarbeit,","hero.h1line2":"neu gedacht","hero.h1line3":"durch KI.","hero.body":"Yourista gibt Anwaltskanzleien einen <strong>KI-Kundenassistenten rund um die Uhr</strong>, der Mandanten leitet, qualifiziert und zum richtigen Anwalt weiterleitet, plus einen intelligenten <strong>Büro-Copiloten</strong>.","hero.seehow":"So funktioniert es","hero.metric1":"× schnellere Aufnahme","hero.metric2":"Genauigkeit","hero.metric3":"Betreuung","hero.fp1title":"Termin vereinbart","hero.fp1sub":"Morgen, 10:00 Uhr","hero.fp2title":"DSGVO-gesichert","hero.fp2sub":"Ende-zu-Ende verschlüsselt","hero.aiOnline":"KI Online","hero.chatUser":"Ich habe einen Geschäftsstreit. Mein Partner verstößt gegen unsere Aktionärsvereinbarung.","hero.chatAI":"Das ist eine ernste Angelegenheit. Ich kann Sie innerhalb von 24 Stunden mit einem Spezialisten verbinden. Darf ich zunächst einige kurze Fragen stellen?","hero.inputPlaceholder":"Beschreiben Sie Ihre Situation...","logos.label":"Vertrauenswürdige Partner und frühe Nutzer","how.label":"So funktioniert es","how.h2a":"Von der ersten Frage","how.h2b":"zum ","how.h2em":"richtigen Anwalt","how.sub":"Yourista begleitet die gesamte Mandantenreise vom Moment des Website-Besuchs bis zur Übergabe an die richtigen Hände.","how.s1h":"Mandant stellt eine Frage","how.s1p":"Das Yourista-Widget spricht Besucher sofort an und versteht ihr rechtliches Problem in einfacher Sprache.","how.s2h":"KI qualifiziert und analysiert","how.s2p":"Unsere Rechts-KI sammelt die richtigen Informationen und erstellt automatisch eine strukturierte Fallzusammenfassung.","how.s3h":"Intelligente Zuweisung zum richtigen Anwalt","how.s3p":"Das Matching-System verbindet den Mandanten mit dem am besten geeigneten Anwalt.","how.s4h":"Anwalt erhält eine vollständige Akte","how.s4p":"Ihr Anwalt erhält vor der ersten Beratung eine vollständige Aufnahmeübersicht.","how.dashTitle":"Yourista Dashboard","how.dashBadge":"Live","how.dc1":"Neue Anfragen","how.dc1sub":"+8 heute","how.dc2":"Zuweisungen","how.dc2sub":"94% Genauigkeit","how.dc3":"Konversion","how.dc3sub":"+12% diese Woche","how.dc4":"Ø Reaktionszeit","how.dc4sub":"vs 4h Branchendurchschnitt","how.dr1":"Geschäftsstreit, Verstoß gegen Aktionärsvereinbarung","how.dr2":"Überprüfung des Arbeitsvertrags","how.dr3":"IP-Markenregistrierungsanfrage","how.dr4":"Beratung zur Unternehmensrestrukturierung","how.tagNew":"Neu","how.tagProg":"In Bearbeitung","how.tagDone":"Zugewiesen","feat.label":"Plattformfunktionen","feat.h2a":"Entwickelt für ","feat.h2em":"Rechts-","feat.h2b":"profis","feat.sub":"Zwei intelligente Tools, eines für Ihre Mandanten und eines für Ihr Team, in perfekter Harmonie.","feat.f1h":"Intelligente Mandantenaufnahme","feat.f1p":"Eine 24/7-KI, die Probleme in einfacher Sprache versteht und Mandanten zur genau richtigen Rechtsexpertise leitet.","feat.f2h":"Intelligentes Fall-Matching","feat.f2p":"Unser System verbindet jeden Mandanten mit dem am besten geeigneten Anwalt.","feat.f3h":"DSGVO-zuerst Sicherheit","feat.f3p":"Von Anfang an für die europäische Rechtskonformität entwickelt, mit Ende-zu-Ende-Verschlüsselung.","feat.f4h":"KI-Terminverwaltung","feat.f4p":"Ihr intelligenter Büro-Copilot verwaltet automatisch Zeitpläne, Fristen und Prioritäten.","feat.f5h":"Dokumentenintelligenz","feat.f5p":"Überprüfen, zusammenfassen und markieren Sie wichtige Klauseln mit unseren trainierten KI-Modellen.","feat.f6h":"Analyse und Berichterstattung","feat.f6p":"Volle Transparenz über Aufnahme-Performance und Mandantenzufriedenheit in einem Dashboard.","feat.phase1live":"● Phase 1 Verfügbar","feat.phase2soon":"◌ Phase 2 Bald","phases.label":"Produkt-Roadmap","phases.h2a":"Präzise Lieferung,","phases.h2em":"Phase für Phase","phases.p1badge":"Phase 1 · MVP Jetzt","phases.p1h":"Mandanten-<br/>Assistent","phases.p1desc":"Das intelligente Frontend, das Mandanten hilft die richtige Rechtsunterstützung zu finden, rund um die Uhr verfügbar.","phases.p1f1":"Konversationelle Rechtsaufnahme","phases.p1f2":"Anwaltszuweisungssystem","phases.p1f3":"Mehrsprachige Unterstützung (NL/EN/FR/DE)","phases.p1f4":"Website-Einbettungs-Widget","phases.p1f5":"Mandantenportal und Fallverfolgung","phases.p1f6":"Analyse-Dashboard","phases.p2badge":"Phase 2 · Bald","phases.p2h":"Anwaltsbüro-<br/>Assistent","phases.p2desc":"Ein KI-Copilot in Ihrer Kanzlei, der Zeit, Aufgaben und Dokumente verwaltet.","phases.p2f1":"KI-Termin und Kalenderverwaltung","phases.p2f2":"Fristen und Aufgabenverfolgung","phases.p2f3":"Dokumentenzusammenfassung","phases.p2f4":"Fall-Zeitleisten-Builder","phases.p2f5":"Abrechnung und Zeiterfassung","phases.p2f6":"Interne Wissensbasis-KI","testi.label":"Was sie sagen","testi.h2a":"Vertraut von","testi.h2em":"Rechtsprofis","testi.sub":"Frühe Partner sehen bereits transformative Ergebnisse.","testi.t1":"\"Yourista hat völlig verändert, wie neue Mandanten uns erreichen. Die KI übernimmt die erste Triage wunderbar und wir erhalten perfekt qualifizierte Anfragen.\"","testi.t2":"\"Als Einzelanwalt verbrachte ich Stunden mit E-Mails. Yourista hat das vollständig eliminiert. Es ist wie ein intelligenter Empfang, der nie schläft.\"","testi.t2role":"Selbstständiger Anwalt, Amsterdam","testi.t3":"\"Die Matching-Genauigkeit ist beeindruckend. Unsere Konversion von Anfrage zu Mandat ist um über 40% gestiegen.\"","price.label":"Transparente Preise","price.h2a":"Einfache, ehrliche","price.h2em":"Preise","price.sub":"Zwei fokussierte Produkte. Keine versteckten Gebühren. Jederzeit kündbar.","price.p1name":"Website-Assistent","price.permonth":"/Monat","price.p1desc":"KI-gestützter Assistent auf der Website Ihrer Kanzlei. Phase 1, jetzt verfügbar.","price.p1f1":"Unbegrenzte Mandantengespräche","price.p1f2":"Website-Einbettungs-Widget","price.p1f3":"Intelligentes Anwalts-Matching","price.p1f4":"Mehrsprachig (NL/EN/FR/DE)","price.p1f5":"Analyse-Dashboard","price.p1f6":"DSGVO-konform","price.p1btn":"Jetzt starten","price.fullsuite":"Komplettpaket","price.p2name":"Ihr Büro-Manager","price.p2desc":"Website-Assistent plus KI-Büroassistent. Phase 1 und 2 kombiniert.","price.p2f1":"Alles aus dem Website-Assistenten","price.p2f2":"KI-Terminverwaltung","price.p2f3":"Fristen und Aufgabenverfolgung","price.p2f4":"Dokumentenzusammenfassung","price.p2f5":"Prioritätssupport","price.p2f6":"Früher Zugang zu Phase 2","price.p2btn":"14-Tage-Test starten","price.p3name":"Enterprise","price.custom":"Individuell","price.p3desc":"Für große Kanzleien die individuelle Integrationen und lokale Bereitstellung benötigen.","price.p3f1":"Alles aus dem Büro-Manager","price.p3f2":"Individuelle KI-Modellschulung","price.p3f3":"Dedizierter Kundenbetreuer","price.p3f4":"Lokale Bereitstellung","price.p3f5":"Individuelle SLA-Vereinbarung","price.p3btn":"Vertrieb kontaktieren","cta.label":"Früher Zugang","cta.h2a":"Bereit, Ihre","cta.h2em":"Rechtspraxis zu transformieren?","cta.sub":"Registrieren Sie sich für frühen Zugang. Seien Sie die erste Kanzlei die Yourista erlebt.","cta.placeholder":"ihre@kanzlei.de","cta.btn":"Zugang erhalten","cta.trust1":"DSGVO-konform","cta.trust2":"Keine Kreditkarte erforderlich","cta.trust3":"Jederzeit kündbar","footer.privacy":"Datenschutzrichtlinie","footer.terms":"Nutzungsbedingungen","footer.gdpr":"DSGVO","footer.contact":"Kontakt","footer.copy":"© 2025 Yourista B.V. Alle Rechte vorbehalten."},fr:{"nav.how":"Comment ça marche","nav.features":"Fonctionnalités","nav.roadmap":"Feuille de route","nav.pricing":"Tarifs","nav.badge":"MVP en direct","nav.cta":"Accès anticipé","hero.eyebrow":"Intelligence juridique alimentée par l'IA","hero.h1line1":"Le travail juridique,","hero.h1line2":"réinventé","hero.h1line3":"par l'IA.","hero.body":"Yourista offre aux cabinets d'avocats un <strong>assistant client IA disponible 24h/24</strong> qui guide et oriente les clients vers le bon avocat, plus un <strong>co-pilote de bureau</strong> intelligent.","hero.seehow":"Voir comment ça marche","hero.metric1":"× plus rapide","hero.metric2":"Précision","hero.metric3":"Assistance","hero.fp1title":"Rendez-vous planifié","hero.fp1sub":"Demain, 10h00","hero.fp2title":"Sécurisé RGPD","hero.fp2sub":"Chiffrement de bout en bout","hero.aiOnline":"IA en ligne","hero.chatUser":"J'ai un litige commercial. Mon associé viole notre pacte d'actionnaires.","hero.chatAI":"C'est une affaire sérieuse. Je peux vous mettre en relation avec un spécialiste dans les 24h. Puis-je vous poser quelques questions d'abord ?","hero.inputPlaceholder":"Décrivez votre situation...","logos.label":"Partenaires de confiance et premiers utilisateurs","how.label":"Comment ça marche","how.h2a":"De la première question","how.h2b":"au ","how.h2em":"bon avocat","how.sub":"Yourista gère l'intégralité du parcours client jusqu'au moment où il est entre de bonnes mains.","how.s1h":"Le client pose une question","how.s1p":"Le widget Yourista engage les visiteurs instantanément et comprend leur problème juridique en langage courant.","how.s2h":"L'IA qualifie et analyse","how.s2p":"Notre IA recueille les bonnes informations et construit automatiquement un dossier structuré.","how.s3h":"Mise en relation avec le bon avocat","how.s3p":"Le moteur associe le client à l'avocat le mieux adapté selon le type d'affaire et la disponibilité.","how.s4h":"L'avocat reçoit un dossier complet","how.s4p":"Votre avocat reçoit un résumé complet avant la première consultation pour une préparation optimale.","how.dashTitle":"Tableau de bord Yourista","how.dashBadge":"En direct","how.dc1":"Nouvelles demandes","how.dc1sub":"+8 aujourd'hui","how.dc2":"Mises en relation","how.dc2sub":"94% de précision","how.dc3":"Conversion","how.dc3sub":"+12% cette semaine","how.dc4":"Délai moy.","how.dc4sub":"vs 4h moyenne du secteur","how.dr1":"Litige commercial, violation du pacte","how.dr2":"Révision de contrat de travail","how.dr3":"Demande d'enregistrement de marque","how.dr4":"Conseil en restructuration","how.tagNew":"Nouveau","how.tagProg":"En cours","how.tagDone":"Mis en relation","feat.label":"Fonctionnalités","feat.h2a":"Conçu pour les ","feat.h2em":"professionnels","feat.h2b":"du droit","feat.sub":"Deux outils intelligents travaillant en parfaite harmonie pour vos clients et votre équipe.","feat.f1h":"Prise en charge intelligente","feat.f1p":"Une IA disponible 24h/24 qui comprend les problèmes et oriente les clients vers la bonne expertise.","feat.f2h":"Correspondance intelligente","feat.f2p":"Notre moteur associe chaque client à l'avocat le mieux adapté selon le type d'affaire.","feat.f3h":"Sécurité RGPD en priorité","feat.f3p":"Conçu pour la conformité européenne avec chiffrement de bout en bout et souveraineté des données.","feat.f4h":"Gestion d'agenda par IA","feat.f4p":"Votre co-pilote gère automatiquement les plannings, délais et priorités.","feat.f5h":"Intelligence documentaire","feat.f5p":"Examinez et résumez les clauses importantes avec nos modèles IA formés.","feat.f6h":"Analyse et rapports","feat.f6p":"Visibilité totale sur les performances d'intake et la satisfaction client.","feat.phase1live":"● Phase 1 Disponible","feat.phase2soon":"◌ Phase 2 Bientôt","phases.label":"Feuille de route","phases.h2a":"Livraison précise,","phases.h2em":"phase par phase","phases.p1badge":"Phase 1 · MVP Maintenant","phases.p1h":"Assistant<br/>client","phases.p1desc":"Le frontend intelligent qui aide les clients à trouver le bon soutien juridique, disponible 24h/24.","phases.p1f1":"Prise en charge conversationnelle","phases.p1f2":"Moteur de mise en relation","phases.p1f3":"Support multilingue (NL/EN/FR/DE)","phases.p1f4":"Widget d'intégration","phases.p1f5":"Portail client et suivi","phases.p1f6":"Tableau de bord analytique","phases.p2badge":"Phase 2 · Bientôt","phases.p2h":"Assistant de<br/>bureau juridique","phases.p2desc":"Un co-pilote IA qui gère le temps, les tâches et les communications client.","phases.p2f1":"Gestion IA de l'agenda","phases.p2f2":"Suivi des délais et tâches","phases.p2f3":"Résumé de documents","phases.p2f4":"Constructeur de chronologie","phases.p2f5":"Facturation et saisie du temps","phases.p2f6":"IA de base de connaissances","testi.label":"Ce qu'ils disent","testi.h2a":"La confiance des","testi.h2em":"professionnels du droit","testi.sub":"Les premiers partenaires constatent déjà des résultats transformateurs.","testi.t1":"\"Yourista a transformé la façon dont les nouveaux clients nous contactent. Les clients se sentent écoutés et nous recevons des prospects parfaitement qualifiés.\"","testi.t2":"\"En tant qu'avocat indépendant je passais des heures sur les e-mails. Yourista a totalement éliminé cela. C'est comme avoir un réceptionniste qui ne dort jamais.\"","testi.t2role":"Avocat indépendant, Amsterdam","testi.t3":"\"La précision des mises en relation est impressionnante. Notre conversion de demande en mandat a augmenté de plus de 40%.\"","price.label":"Tarification transparente","price.h2a":"Tarification simple","price.h2em":"et honnête","price.sub":"Deux produits ciblés. Pas de frais cachés. Résiliation à tout moment.","price.p1name":"Assistant site web","price.permonth":"/mois","price.p1desc":"Assistant client IA sur le site de votre cabinet. Phase 1, disponible maintenant.","price.p1f1":"Conversations client illimitées","price.p1f2":"Widget d'intégration","price.p1f3":"Mise en relation intelligente","price.p1f4":"Multilingue (NL/EN/FR/DE)","price.p1f5":"Tableau de bord analytique","price.p1f6":"Conforme RGPD","price.p1btn":"Commencer","price.fullsuite":"Suite complète","price.p2name":"Votre gestionnaire de bureau","price.p2desc":"Assistant site web plus co-pilote de bureau IA. Phases 1 et 2 combinées.","price.p2f1":"Tout de l'assistant site web","price.p2f2":"Gestion d'agenda par IA","price.p2f3":"Suivi des délais","price.p2f4":"Résumé de documents","price.p2f5":"Assistance prioritaire","price.p2f6":"Accès anticipé phase 2","price.p2btn":"Essai gratuit 14 jours","price.p3name":"Entreprise","price.custom":"Sur mesure","price.p3desc":"Pour les grands cabinets nécessitant des intégrations personnalisées et un déploiement sur site.","price.p3f1":"Tout du gestionnaire de bureau","price.p3f2":"Formation de modèle IA personnalisée","price.p3f3":"Gestionnaire de compte dédié","price.p3f4":"Déploiement sur site","price.p3f5":"Accord SLA personnalisé","price.p3btn":"Contacter les ventes","cta.label":"Accès anticipé","cta.h2a":"Prêt à transformer","cta.h2em":"votre cabinet juridique ?","cta.sub":"Rejoignez l'accès anticipé. Soyez le premier cabinet à découvrir Yourista en action.","cta.placeholder":"votre@cabinet.fr","cta.btn":"Obtenir l'accès","cta.trust1":"Conforme RGPD","cta.trust2":"Aucune carte de crédit requise","cta.trust3":"Résiliation à tout moment","footer.privacy":"Politique de confidentialité","footer.terms":"Conditions d'utilisation","footer.gdpr":"RGPD","footer.contact":"Contact","footer.copy":"© 2025 Yourista B.V. Tous droits réservés."}};
+/* ── LANGUAGE SWITCHER ── */
+var currentLang = 'en';
+window.currentLang = 'en';
 
-var currentLang='en';
-window.currentLang='en';
-function applyLang(lang){
-  var t=i18n[lang];if(!t)return;currentLang=lang;window.currentLang=lang;
-  document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(t[k]!==undefined)el.innerHTML=t[k];});
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){var k=el.getAttribute('data-i18n-placeholder');if(t[k]!==undefined)el.placeholder=t[k];});
-  document.querySelectorAll('.lang-btn').forEach(function(btn){btn.classList.toggle('active',btn.dataset.lang===lang);});
-  document.querySelectorAll('#mobileLang button').forEach(function(btn){btn.classList.toggle('active',btn.dataset.lang===lang);});
-  document.documentElement.lang=lang;
-  /* update orb chat UI to match new language */
-  if(typeof updateOrbUI==='function')updateOrbUI();
+/* Keys that legitimately contain HTML (strong, br) — all others use textContent */
+var HTML_KEYS = {'hero.body':1,'phases.p1h':1,'phases.p2h':1};
+
+function applyLang(lang) {
+  var t = i18n[lang];
+  if (!t) return;
+  currentLang = lang;
+  window.currentLang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var k = el.getAttribute('data-i18n');
+    if (t[k] !== undefined) {
+      if (HTML_KEYS[k]) {
+        /* Sanitize: only allow <strong>, <br/>, <em> tags */
+        var clean = t[k].replace(/<(?!\/?(strong|br|em)\s*\/?>)[^>]+>/gi, '');
+        el.innerHTML = clean;
+      } else {
+        el.textContent = t[k];
+      }
+    }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+    var k = el.getAttribute('data-i18n-placeholder');
+    if (t[k] !== undefined) el.placeholder = t[k];
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  document.querySelectorAll('#mobileLang button').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  document.documentElement.lang = lang;
 }
-window.applyLang=applyLang;
-document.querySelectorAll('.lang-btn').forEach(function(btn){btn.addEventListener('click',function(){applyLang(btn.dataset.lang);});});
+window.applyLang = applyLang;
 
-function openMobileMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden';}
-function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow='';}
-window.openMobileMenu=openMobileMenu;window.closeMobileMenu=closeMobileMenu;
+document.querySelectorAll('.lang-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() { applyLang(btn.dataset.lang); });
+});
 
-var ctaForm=document.getElementById('cta-form');
-if(ctaForm){ctaForm.addEventListener('submit',async function(e){
-  e.preventDefault();
-  var btn=ctaForm.querySelector('button[type="submit"]'),orig=btn.textContent;
-  btn.textContent='...';btn.disabled=true;
-  try{
-    var res=await fetch(ctaForm.action,{method:'POST',body:new FormData(ctaForm),headers:{'Accept':'application/json'}});
-    if(res.ok){ctaForm.style.display='none';document.getElementById('form-success').style.display='block';}
-    else{btn.textContent=orig;btn.disabled=false;}
-  }catch(e){btn.textContent=orig;btn.disabled=false;}
-});}
+/* ── MOBILE MENU ── */
+function openMobileMenu() {
+  document.getElementById('mobileMenu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+window.openMobileMenu = openMobileMenu;
+window.closeMobileMenu = closeMobileMenu;
 
+/* ── FORM SUBMIT ── */
+/* ── SECURE FORM SUBMISSION (rate-limited, honeypot, validated) ── */
+var ctaForm = document.getElementById('cta-form');
+var lastSubmit = 0;
+var RATE_LIMIT_MS = 30000; /* 30 seconds between submissions */
+if (ctaForm) {
+  ctaForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    /* Rate limiting */
+    var now = Date.now();
+    if (now - lastSubmit < RATE_LIMIT_MS) {
+      alert('Please wait before submitting again.');
+      return;
+    }
+    /* Honeypot check — bots fill hidden fields */
+    var honeypot = ctaForm.querySelector('[name="_gotcha"]');
+    if (honeypot && honeypot.value) return;
+    /* Email validation */
+    var emailInput = ctaForm.querySelector('[name="email"]');
+    var emailVal = (emailInput.value || '').trim();
+    var emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(emailVal)) {
+      emailInput.setCustomValidity('Please enter a valid email address');
+      emailInput.reportValidity();
+      return;
+    }
+    emailInput.setCustomValidity('');
+    var btn = ctaForm.querySelector('button[type="submit"]');
+    var orig = btn.textContent;
+    btn.textContent = '...'; btn.disabled = true;
+    lastSubmit = now;
+    try {
+      var res = await fetch(ctaForm.action, { method: 'POST', body: new FormData(ctaForm), headers: { 'Accept': 'application/json' } });
+      if (res.ok) { ctaForm.style.display = 'none'; document.getElementById('form-success').style.display = 'block'; }
+      else { btn.textContent = orig; btn.disabled = false; }
+    } catch(err) { btn.textContent = orig; btn.disabled = false; }
+  });
+}
 
+/* ── NAV SCROLL ── */
+window.addEventListener('scroll', function() {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
 
-window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);});
+/* ── SCROLL REVEAL ── */
 document.body.classList.add('js-ready');
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting)setTimeout(function(){e.target.classList.add('visible');},i*80);});},{threshold:.08});
-document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
-function countUp(el,target,suffix){var v=0,inc=target/(1800/16),ti=setInterval(function(){v=Math.min(v+inc,target);el.textContent=Math.round(v)+(suffix||'');if(v>=target)clearInterval(ti);},16);}
-var cObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var el=e.target,target=parseInt(el.dataset.target),suffix=el.dataset.suffix||'';if(target)countUp(el,target,suffix);cObs.unobserve(el);}});},{threshold:.5});
-document.querySelectorAll('[data-target]').forEach(function(el){cObs.observe(el);});
-/* ═══════════════════════════════════════
-   CAROUSEL — mobile swipe, desktop static
-═══════════════════════════════════════ */
-(function(){
-  function initCarousel(trackId, dotsId, prevId, nextId){
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e, i) {
+    if (e.isIntersecting) setTimeout(function() { e.target.classList.add('visible'); }, i * 80);
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+
+/* ── COUNT UP ANIMATION ── */
+function countUp(el, target, suffix) {
+  var v = 0, duration = 1800, step = 16;
+  var inc = target / (duration / step);
+  var ti = setInterval(function() {
+    v = Math.min(v + inc, target);
+    el.textContent = Math.round(v) + (suffix || '');
+    if (v >= target) clearInterval(ti);
+  }, step);
+}
+var cObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      var el = e.target, target = parseInt(el.dataset.target), suffix = el.dataset.suffix || '';
+      if (target) countUp(el, target, suffix);
+      cObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(function(el) { cObs.observe(el); });
+
+/* ── CAROUSEL (mobile swipe, desktop static) ── */
+(function() {
+  function initCarousel(trackId, dotsId, prevId, nextId) {
     var track = document.getElementById(trackId);
-    var dotsEl= document.getElementById(dotsId);
-    var prevBtn=document.getElementById(prevId);
-    var nextBtn=document.getElementById(nextId);
-    if(!track)return;
-
-    var cards   = Array.from(track.children);
-    var total   = cards.length;
+    var dotsEl = document.getElementById(dotsId);
+    var prevBtn = document.getElementById(prevId);
+    var nextBtn = document.getElementById(nextId);
+    if (!track) return;
+    var cards = Array.from(track.children);
+    var total = cards.length;
     var current = 0;
-    var startX  = 0;
-    var isDragging = false;
-    var dragDelta  = 0;
+    var startX = 0, isDragging = false, dragDelta = 0;
 
-    /* build dots */
-    cards.forEach(function(_,i){
-      var d=document.createElement('button');
-      d.className='carousel-dot'+(i===0?' active':'');
-      d.setAttribute('aria-label','Slide '+(i+1));
-      d.addEventListener('click',function(){goTo(i);});
+    cards.forEach(function(_, i) {
+      var d = document.createElement('button');
+      d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      d.addEventListener('click', function() { goTo(i); });
       dotsEl.appendChild(d);
     });
 
-    function getCardWidth(){
-      return cards[0] ? cards[0].getBoundingClientRect().width + 1 : 0; // +1 for gap
+    function getCardWidth() {
+      return cards[0] ? cards[0].getBoundingClientRect().width + 1 : 0;
     }
 
-    function goTo(idx){
-      current = Math.max(0, Math.min(total-1, idx));
+    function goTo(idx) {
+      current = Math.max(0, Math.min(total - 1, idx));
       var offset = -current * getCardWidth();
-      track.style.transform = 'translateX('+offset+'px)';
-      /* dots */
-      Array.from(dotsEl.children).forEach(function(d,i){
-        d.classList.toggle('active', i===current);
-      });
-      /* arrows */
-      if(prevBtn) prevBtn.disabled = current===0;
-      if(nextBtn) nextBtn.disabled = current===total-1;
+      track.style.transform = 'translateX(' + offset + 'px)';
+      Array.from(dotsEl.children).forEach(function(d, i) { d.classList.toggle('active', i === current); });
+      if (prevBtn) prevBtn.disabled = current === 0;
+      if (nextBtn) nextBtn.disabled = current === total - 1;
     }
 
-    if(prevBtn) prevBtn.addEventListener('click',function(){goTo(current-1);});
-    if(nextBtn) nextBtn.addEventListener('click',function(){goTo(current+1);});
+    if (prevBtn) prevBtn.addEventListener('click', function() { goTo(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); });
 
-    /* touch / mouse drag */
-    function onStart(x){ startX=x; isDragging=true; dragDelta=0; track.classList.add('grabbing'); }
-    function onMove(x) { if(!isDragging)return; dragDelta=x-startX; var base=-current*getCardWidth(); track.style.transform='translateX('+(base+dragDelta)+'px)'; }
-    function onEnd()   { isDragging=false; track.classList.remove('grabbing'); if(Math.abs(dragDelta)>50){ goTo(dragDelta<0?current+1:current-1); }else{ goTo(current); } dragDelta=0; }
+    function onStart(x) { startX = x; isDragging = true; dragDelta = 0; track.classList.add('grabbing'); }
+    function onMove(x) { if (!isDragging) return; dragDelta = x - startX; var base = -current * getCardWidth(); track.style.transform = 'translateX(' + (base + dragDelta) + 'px)'; }
+    function onEnd() { isDragging = false; track.classList.remove('grabbing'); if (Math.abs(dragDelta) > 50) { goTo(dragDelta < 0 ? current + 1 : current - 1); } else { goTo(current); } dragDelta = 0; }
 
-    track.addEventListener('touchstart',function(e){onStart(e.touches[0].clientX);},{passive:true});
-    track.addEventListener('touchmove', function(e){onMove(e.touches[0].clientX);},{passive:true});
-    track.addEventListener('touchend',  onEnd);
-    track.addEventListener('mousedown', function(e){onStart(e.clientX);e.preventDefault();});
-    document.addEventListener('mousemove',function(e){onMove(e.clientX);});
-    document.addEventListener('mouseup',  onEnd);
-
-    /* re-clamp on resize (e.g. orientation change) */
-    window.addEventListener('resize',function(){goTo(current);});
-
-    /* init */
+    track.addEventListener('touchstart', function(e) { onStart(e.touches[0].clientX); }, { passive: true });
+    track.addEventListener('touchmove', function(e) { onMove(e.touches[0].clientX); }, { passive: true });
+    track.addEventListener('touchend', onEnd);
+    track.addEventListener('mousedown', function(e) { onStart(e.clientX); e.preventDefault(); });
+    document.addEventListener('mousemove', function(e) { onMove(e.clientX); });
+    document.addEventListener('mouseup', onEnd);
+    window.addEventListener('resize', function() { goTo(current); });
     goTo(0);
   }
+  initCarousel('testi-track', 'testi-dots', 'testi-prev', 'testi-next');
+  initCarousel('price-track', 'price-dots', 'price-prev', 'price-next');
+})();
 
-  initCarousel('testi-track','testi-dots','testi-prev','testi-next');
-  initCarousel('price-track','price-dots','price-prev','price-next');
+/* ── FLOATING PARTICLES ── */
+(function() {
+  var canvas = document.getElementById('particles');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var maxP = 40;
+
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (var i = 0; i < maxP; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5 + 0.5,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+      o: Math.random() * 0.3 + 0.05
+    });
+  }
+
+  function draw() {
+    /* Pause when tab is hidden — saves CPU/battery */
+    if (document.hidden) { requestAnimationFrame(draw); return; }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      p.x += p.dx; p.y += p.dy;
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(45,212,191,' + p.o + ')';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  /* Respect reduced motion */
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    draw();
+  }
+})();
+
+/* ── CURSOR GLOW (desktop only) ── */
+(function() {
+  var glow = document.getElementById('cursorGlow');
+  if (!glow) return;
+  var isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isMobile) return;
+  glow.style.display = 'block';
+  document.addEventListener('mousemove', function(e) {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  });
+})();
+
+/* ── 3D CARD TILT ── */
+(function() {
+  var isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isMobile) return;
+  document.querySelectorAll('.tilt-card').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var rect = card.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5;
+      var y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = 'perspective(800px) rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg) scale(1.01)';
+    });
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)';
+    });
+  });
+})();
+
+/* ── HERO MOCKUP PARALLAX TILT ── */
+(function() {
+  var isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isMobile) return;
+  var wrap = document.getElementById('heroMockup');
+  if (!wrap) return;
+  var hero = document.getElementById('hero');
+  hero.addEventListener('mousemove', function(e) {
+    var rect = hero.getBoundingClientRect();
+    var x = (e.clientX - rect.left) / rect.width - 0.5;
+    var y = (e.clientY - rect.top) / rect.height - 0.5;
+    wrap.style.transform = 'rotateY(' + (-4 + x * 8) + 'deg) rotateX(' + (2 + y * -5) + 'deg)';
+  });
+  hero.addEventListener('mouseleave', function() {
+    wrap.style.transform = 'rotateY(-4deg) rotateX(2deg)';
+  });
 })();
 
 </script>
